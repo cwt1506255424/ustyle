@@ -1,0 +1,119 @@
+@charset "utf-8";
+/* CSS Document */
+.margin{width:1150px;margin:0 auto;}
+@font-face {
+  font-family: 'iconfont';
+  src: url('../font/iconfont.eot');
+  src: url('../font/iconfont.eot?#iefix') format('embedded-opentype'),
+  url('../font/iconfont.woff') format('woff'),
+  url('../font/iconfont.ttf') format('truetype'),
+  url('../font/iconfont.svg#iconfont') format('svg');
+}
+.iconfont{
+  font-family:"iconfont" !important;
+  font-size:16px;font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+header{height:66px;margin:0 0 20px;border-bottom:2px solid #222;}
+header a{color:#000;}
+header .header-inner{width:990px;height:100%;margin:0 auto;}
+header .header-inner .logo{float:left;line-height:66px;font-size:0;}
+header .header-inner .logo img{vertical-align:middle;}
+header .header-tool{float:right;line-height:66px;font-size:0;}
+header .header-tool a{cursor:pointer;}
+header .header-tool .tool-select{position:absolute;width:72px;line-height:28px;left:0;background: #eaeceb;z-index:9;}
+header .header-tool .has{position:relative;}
+header .header-tool .san{width:12px;}
+header .header-tool .client{position:relative;}
+header .header-tool .has:hover,.client:hover{background-color:#eaeceb;}
+header .header-tool .tool-select{display:none;}
+header .header-tool .tool-select a{display:block;padding:0 0 0 15px;border-top:1px solid #ddd;font-size:12px;vertical-align:middle;}
+header .header-tool #tool-select{width:84px;}
+header .header-tool li{font-size:12px;vertical-align:middle;display:inline-block;padding:0 12px;line-height:28px;}
+#logIn{height:658px;}
+#logIn .passport{float:left;margin:107px 0;width:575px;}
+#logIn .passport .cover{padding:50px 0;width:100%;height:318px;border-right:1px solid #dfdfdf;}
+#logIn .passport .cover img{display:block;margin:0 auto;margin-top:0px;margin-top:50px;width:252px;height:190px;}
+#logIn .content{float:left;margin-top:107px;padding-left:85px;}
+#logIn .content .register{color:#b9b9b9;font-size:14px;}
+#logIn .content .register .err-tip{display:none;position:absolute;z-index:1000;padding:0 10px;height:30px;border:1px solid #ffbdbe;background-color:#ffebeb;color:red;line-height:30px;}
+#logIn .content .register .err-tip b{position:absolute;top:30px;left:20px;display:block;width:17px;height:9px;background-image:url(../images/sprite.passport.png);background-position:-538px -29px;}
+
+
+
+
+#logIn .content .register li{position:relative;margin-bottom:25px;width:270px;}
+#logIn .content .register li #region{padding:4px 0;width:132px;height:30px;border-color:#c1c1c1;color:#9a9a9a;font-size:16px;font-family:黑体;}
+#logIn .content .register li .country-code{display:block;float:left;width:58px;height:43px;border:1px solid #dbdbdb;border-right:0;text-align:center;white-space:nowrap;font-size:16px;line-height:43px;}
+#logIn .content .register li .input{position:absolute;top:0;right:0;display:block;width:209px;padding:0;height:43px;border:1px solid #dbdbdb;color:#9a9a9a;text-indent:10px;font-size:16px;line-height:43px;}
+#logIn .content .register #check{width:330px;}
+#logIn .content .register #check .img-check{margin-top:25px;margin-bottom:25px;width:270px;}                          
+#logIn .content .register #check .img-check .img-check-t{font-size:13px;line-height:13px;text-align:left;margin-bottom:10px;color:#b0b0b0;}
+#logIn .content .register #check .img-check .img-check-t .img-check-refresh{float:right;font-size:13px;color:#ff1901;cursor:pointer;}
+#logIn .content .register #check .img-check .img-check-b .img-check-pics{display:inline-block;width:270px;height:62px;padding:0;position:relative;}                        
+#logIn .content .register #check .img-check .img-check-b .img-check-pics .img-check-pic{background-image:url(../images/images.png);}
+#logIn .content .register #check .img-check .img-check-b .img-check-pics{display:flex;justify-content:space-between;}
+#logIn .content .register #check .img-check .img-check-b .img-check-pics li{background:#fff no-repeat;background-size:240px 240px;width:60px !important;height:60px !important;border:1px solid #e0e0e0;margin-right:7px;cursor:pointer;}
+#logIn .content .register #check .img-check .img-check-b .img-check-pics>li{background-position:0px 0px;}
+#logIn .content .register #check .img-check .img-check-b .img-check-pics>li+li{background-position:-60px 0px;}
+#logIn .content .register #check .img-check .img-check-b .img-check-pics>li+li+li{background-position:-120px 0px;}
+#logIn .content .register #check .img-check .img-check-b .img-check-pics>li+li+li+li{background-position:-180px 0px;}
+#logIn .content .register #check .img-check .img-check-b .img-check-tip{display:inline-block;position:absolute;left:0;top:90px;font-size:13px;line-height:19px;height:19px;color:red;}
+
+
+
+#logIn .content .register li.te{height:69px}
+#logIn .content .register li.te .pwd-tips{display:none;position:absolute;top:-10px;left:285px;padding-top:7px;width:160px !important;height:72px;background-image:url(../images/sprite.passport.png);background-position:-142px -152px;font-size:12px;}
+#logIn .content .register li.te .pwd-tips>div{position:relative;margin-left:15px;padding-left:15px;height:22px;color:#b9b9b9;font-size:12px;line-height:22px;}
+#logIn .content .register li.te .pwd-tips>div i{position:absolute;top:50%;left:-2px;margin:-7px 0 0;width:14px;height:14px;background-image:url(../images/sprite.passport.png);background-position:-522px -29px;}
+#logIn .content .register li .message{float:left;width:160px;left:0;}
+#logIn .content .register li .send{float:right;border:none;color:#fff;text-align:center;width:100px;height:45px;background:#ff1901;font:12px/45px "黑体";}
+#logIn .content .register li.chec-code{position:relative;}
+#logIn .content .register li #span{position:absolute;right:-60px;top:0px;font:20px/40px "";}
+#logIn .content .register li .pwd{width:268px;}
+#logIn .content .register li .pwd-intensity-container{position:absolute;bottom:0;padding-top:5px;overflow:hidden;margin-top:5px;width:270px;height:auto;text-align:right;}
+#logIn .content .register li .pwd-intensity-container .pwd-intensity{padding:1px 10px;height:15px;background-color:#e8e8e8;text-align:center;font-size:12px;color:#b9b9b9;}
+#logIn .content .register li.items{white-space:nowrap;}
+#logIn .content .register li .link{color:#ff1901;text-decoration:underline;}
+#logIn .content .register li.reg-btn{white-space:nowrap;}
+#logIn .content .register .reg-btn .register-btn{width:270px;background:#555;font-weight:700;font-size:20px;float:left;cursor:default;padding:0;height:45px;border:none;color:#fff;text-align:center;font-family:黑体;line-height:45px;}
+#logIn .content .register .reg-btn .qrcode{position:absolute;right:0;position:relative;width:55px;}
+#logIn .content .register .reg-btn .qrcode .qrcode-reg{margin-left:10px;width:45px;height:45px;border:1px solid #b0b0b0;box-sizing:border-box;text-align: center;display:inline-block;}
+#logIn .content .register .reg-btn .qrcode .qrcode-reg .qrcode-icon{width:28px;height:28px;background-image:url(../images/sprite.passport.png);background-position:-486px -90px;display:inline-block;margin-top:7px;}
+#logIn .content .register .reg-btn .qrcode .download{position:absolute;bottom:0;left:332px;width:231px;height:290px;background-color:#f8f8f8;z-index:1000;display:none;border:1px solid #b0b0b0;cursor:pointer;}
+#logIn .content .register .reg-btn .qrcode .download .sanjiao{position:absolute;bottom:20px;left:-7px;display:block;width:8px;height:16px;background-image:url(../images/sprite.passport.png);background-position:-562px -72px;}
+
+#logIn .content .register .reg-btn .qrcode .download .qr-img{position:relative;background-image:url(../images/qrcode.png);background-repeat:no-repeat;background-size:100% 100%;margin:32px auto 15px;width:143px;height:147px;}
+#logIn .content .register .reg-btn .qrcode .download .qr-words{height:25px;line-height:25px;font-size:16px;text-align:center;color:#000;}
+#logIn .content .register .quick-login{text-align:right;margin-bottom:25px;font-size:13px;}
+footer{height:295px;background:#000;}
+footer #footer-t{padding:20px 0 10px;}
+footer #footer-t .left{width:123px;height:31.5px;float:left;margin-right:60px;line-height:30px;font-size:12px;font-weight:700;}
+footer #footer-t .left .iconfont{color:#fff;margin-right:5px;}
+footer #footer-t .left .red{font:700 12px/30px "";color:#e01;}
+footer #footer-t .left .rpzp{font:700 12px/30px "";color:#fff;}
+footer #footer-t .right{float:right;border:1px solid #262626;width:240px;}
+footer #footer-t .right input{width:180px;height:32px;padding:0 10px;line-height:32px;border:none;margin:0;background:#000;color:#666;}
+footer #footer-t .right a{display:block;float:right;margin-right:20px;font-size:20px;line-height:28px;opacity:.5;color:#fff;}
+footer #footer-m{height:121px;padding:15px 0;border-top:1px solid #262626;}
+footer #footer-m ul{display:flex;justify-content:space-between;}
+footer #footer-m ul li p{line-height:24px;}
+footer #footer-m ul li p span{color:#fff;}
+footer #footer-m ul li p a{color:#666;}
+footer #footer-m ul li p a:hover {text-decoration:underline;}
+footer #footer-b img{float:left;margin-right:5px;}
+footer #footer-b .about{float:left;line-height:20px;color:#666;margin-left:10px;box-sizing:border-box;}
+footer #footer-b .about a{color:#666;}
+footer #footer-b .about span{padding:0 10px;}
+.qrcode-hover-box{width:60px;height:60px;text-align:center;color:#fff;background:#000;opacity:.5;cursor:pointer;margin-top:20px;position:fixed;right:0px;bottom:130px;}
+.qrcode-hover-box:hover{opacity:.9;}
+.qrcode-hover-box #focusLeft{cursor:default;position:relative;right:260px;bottom:100px;width:130px;height:180px;text-align:center;background-color:#f4f4f4;display:none;}
+.qrcode-hover-box #downLoadAppRight{cursor:default;position:relative;right:130px;bottom:280px;width:130px;height:180px;text-align:center;background-color:#f4f4f4;display:none;}
+.qrcode-hover-box .layer-box{width:60px;height:60px;text-align:center;line-height:50px;color:#fff;background:#000;opacity:.5;cursor:pointer;display:inline-block;}
+.qrcode-hover-box .layer-box .qrcode-img{width:28px;height:28px;background-image: url(../images/sprite.base.png);background-position:-59px 0;display:inline-block;margin-top:16px;}
+.return-top{width:60px;height:60px;text-align:center;line-height:50px;color:#fff;background:#000;opacity:.5;cursor:pointer;margin-top:20px;font:900 50px/75px "";position:fixed;right:0px;bottom:50px;}
+.return-top:hover{opacity:.9;}
+
+
