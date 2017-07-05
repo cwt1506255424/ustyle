@@ -1,0 +1,517 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>新用户注册</title>
+<link href="../css/public.css" rel="stylesheet" type="text/css">
+<link href="../css/zhuce.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<header>
+	<div class="header-inner clear">
+    	<h2 class="logo"><a href="#"><img src="../images/logo-en.png"/></a></h2>
+        <ul class="header-tool">
+            <li><span>Hi~</span><a href="#">[请登录]</a><a href="#">[免费注册]</a></li>
+            <li class="has"><a href="#">MY有货</a><img class="san" src="../images/sanjiao.png"/>
+            <div id="hasTool" class="tool-select">
+            	<a href="#">我的收藏</a><a href="#">优惠券</a>
+            </div>
+            </li>
+            
+            <li><a href="#">订单中心</a></li>
+            <li class="client"><span><a href="#">客户服务</a></span><img class="san" src="../images/sanjiao.png"/>
+            <div id="tool-select" class="tool-select">
+            	<a href="#">在线客服</a><a href="#">帮助中心</a>
+            </div>
+            </li>
+        </ul>
+    </div>
+</header>
+
+
+<section id="logIn" class="margin clear">
+	<div class="passport">
+    	<div class="cover">
+        	<a href="#"><img src="../images/img1.jpg"/></a>
+        </div>
+    </div>
+    <div class="content">
+    	<div class="register">
+			<ul>
+				<li>
+					<select id="region">
+						<option value="+61">澳大利亚</option>
+                        <option value="+82">韩国</option>
+                        <option value="+1">加拿大</option>
+                        <option value="+60">马来西亚</option>
+                        <option value="+1">美国</option>
+                        <option value="+81">日本</option>
+                        <option value="+65">新加坡</option>
+                        <option value="+61">英国</option>
+                        <option value="+86" selected="selected">中国</option>
+                        <option value="+853">中国澳门</option>
+                        <option value="+886">中国台湾</option>
+                        <option value="+65">新加坡</option>
+                        <option value="+852">中国香港</option>
+					</select>
+				</li>
+                <div id="err-tip" class="err-tip">
+                	<span id="tips">手机号码格式不正确,请重新输入</span>
+                    <b></b>
+                </div>
+                <li class="clear">
+                	<span id="country-code" class="country-code">+86</span>
+                    <input id="phone" class="input" value="" placeholder="请输入手机号码" type="text"  />
+                </li>
+				<li id="check">
+						<div class="img-check">
+							<div class="img-check-t clear">
+								<span>请将下列图片点击翻转至正确方向</span>
+								<a href="#" onclick="reImg()" class="img-check-refresh">换一批</a>
+							</div>
+							<div class="img-check-b">
+								<ul id="img-check-pics" class="img-check-pics">
+									<li class="img-check-pic" onclick="changePosition()" style="background-position-x:0px;background-position-y:0px;"></li>
+									<li class="img-check-pic" onclick="changePosition()" style="background-position-x:-60px;background-position-y:-60px;"></li>
+									<li class="img-check-pic" onclick="changePosition()" style="background-position-x:-120px;background-position-y:-120px;"></li>
+									<li class="img-check-pic" onclick="changePosition()" style="background-position-x:-180px;background-position-y:-180px;"></li>
+								</ul>
+								<span id="img-check-tip" class="img-check-tip"></span> 
+							</div>
+						</div>
+				</li>
+				<li class="clear chec-code">
+						<input id="message" class="input message" type="text" placeholder="短信验证码" maxlength="4"/>
+						<input id="send" class="send" value="获取短信验证码" type="button" onclick="changeyzm()" /><span id="span"></span> 
+				</li>
+                <li class="clear te">
+                	<input id="pwd" class="input pwd" type="password" placeholder="设置密码" maxlength="20" onkeypress="inten()"/>
+                    <div class="pwd-intensity-container">
+                    	<span id="sp1" class="pwd-intensity">低</span>
+                        <span id="sp2" class="pwd-intensity">中</span>
+                        <span id="sp3" class="pwd-intensity">高</span>
+                    </div>
+					<div id="pwd-tips" class="pwd-tips">
+						<div id="pwd-tip1" class="default"><i></i>密码只支持6-20位字符</div>
+						<div id="pwd-tip2" class="default"><i></i>由字母、 数字组合，不能包含特殊符号</div>
+					</div>
+                </li>
+                <li class="items clear">
+                	<input type="checkbox" id="agree" checked=""/>
+                    <span>我已阅读并同意遵守
+                    	<a href="#" class="link">YOHO!BUY 有货服务条款</a>
+                    </span>
+                </li>
+                <li class="reg-btn clear">
+                	<a href="denglu.html"><input type="submit" id="register-btn" class="register-btn" value="立即注册" disabled=""/></a>
+                    <div class="qrcode">
+                    	<a href="#" class="qrcode-reg"><i class="qrcode-icon"></i></a>
+						<div class="download">
+							<div class="qr-img"></div>
+							<h3 class="qr-words">扫描二维码</h3>
+							<h3 class="qr-words">下载YohoBuy手机端</h3>
+							<h3 class="qr-words"><a href="#">更多客户端下载</a></h3>
+                            <i class="sanjiao"></i>
+						</div>
+                    </div>
+                </li>
+                <li class="quick-login">
+                	我已注册YOHO!BUY 有货账号
+                    <a href="#" class="link">快速登录</a>
+                </li>			
+			</ul>		
+		</div>
+    </div>
+</section>
+<footer>
+	<div id="footer-t" class="margin clear">
+    	<div class="left">
+        	<i class="iconfont"><img src="../images/zheng.png"/></i><span class="red">100%</span><span class="rpzp">品牌正品</span>
+        </div>
+        <div class="left">
+        	<i class="iconfont"><img src="../images/seven.png"/></i><span class="red">7天</span><span class="rpzp">无理由退换货</span>
+        </div>
+        <div class="left">
+        	<i class="iconfont"><img src="../images/weixin.png"/></i><span class="red">便捷</span><span class="rpzp">在线客服</span>
+        </div>
+        <div class="right">
+        	<input type="text" value="订阅我们的邮件"><a href="#"><i class="iconfont"><img src="../images/youjian.png"/></i></i></a>
+        </div>
+    </div>
+	<div id="footer-m" class="margin">
+    	<ul>
+        	<li>
+            	<p><span>新手专区</span></p>
+                <p><a href="#">注册登录</a></p>
+                <p><a href="#">购物结算</a></p>
+                <p><a href="#">下单支付</a></p>
+                <p><a href="#">收货评价</a></p>
+            </li>
+        	<li>
+            	<p><span>会员中心</span></p>
+                <p><a href="#">会员制度</a></p>
+                <p><a href="#">会员优惠</a></p>
+                <p><a href="#">账户管理</a></p>
+                <p><a href="#">密码管理</a></p>
+            </li>
+            <li>
+            	<p><span>购物指南</span></p>
+                <p><a href="#">发票</a></p>
+                <p><a href="#">尺码对照</a></p>
+                <p><a href="#">尺码解读</a></p>
+                <p><a href="#">商品咨询</a></p>
+            </li>
+            <li>
+            	<p><span>支付方式</span></p>
+                <p><a href="#">在线支付</a></p>
+                <p><a href="#">货到付款</a></p>
+                <p><a href="#">分期支付</a></p>
+                <p><a href="#">优惠券、有货币</a></p>
+            </li>
+            <li>
+            	<p><span>配送方式</span></p>
+                <p><a href="#">配送说明</a></p>
+                <p><a href="#">运费说明</a></p>
+                <p><a href="#">验货签收</a></p>
+                <p><a href="#">收货样品</a></p>
+            </li>
+            <li>
+            	<p><span>售后服务</span></p>
+                <p><a href="#">退换货政策</a></p>
+                <p><a href="#">退换货流程</a></p>
+                <p><a href="#">投诉与建议</a></p>
+                <p><a href="#">在线客服</a></p>
+            </li>
+            <li>
+            	<p><span>APP常见问题</span></p>
+                <p><a href="#">IPhone版</a></p>
+                <p><a href="#">Android版</a></p>
+                <p><a href="#">wap版</a></p>
+                <p><a href="#">IPAD版</a></p>
+            </li>
+        </ul>
+    </div>
+    <div id="footer-b" class="margin clear">
+    	<a href="#"><img src="../images/footer1.png"/></a>
+        <a href="#"><img src="../images/footer2.png"/></a>
+        <a href="#"><img src="../images/footer3.png"/></a>
+        <div class="about">
+        	<p><a href="#">返回首页</a><span>|</span><a href="#">YOHO!BUY 有货</a><span>|</span><a href="#">新力传媒</a><span>|</span><a href="#">联系我们</a><span>|</span><a href="#">商家入驻</a><span>|</span><a href="#">隐私条款</a><span>|</span><a href="#">友情链接</a></p>
+            <p>CopyRight &copy;2007-2016 南京新与力文化传播有限公司<a href="#">苏ICP备09011225号</a>NewPower Co. 版权所有 经营许可证编号：苏B2-20120395</p>
+        </div>
+    </div>
+</footer>
+<div id="show">
+    <div class="qrcode-hover-box">
+        <a href="#" class="layer-box"><span class="qrcode-img"></span></a>
+		<div id="focusLeft" class="valign">
+            <img src="../images/wechat.png" />
+            <h5 class="qr-words">微信扫一扫</h5>
+            <h5 class="qr-words">关注公众号，赢免单</h5>
+        </div>
+        <div id="downLoadAppRight" class="valign">
+            <img src="../images/mobile.png" />
+            <h5 class="qr-words">下载手机客户端</h5>
+            <h5 class="qr-words">更多客户端</h5>
+        </div>
+    </div>
+    
+    <a href="zhuce.html"><div class="return-top">^</div></a>
+</div>
+
+</body>
+</html>
+<script type="text/javascript" src="../js/tools.js"></script>
+<script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript">
+//改变验证码
+function reImg(){
+	var img = document.getElementsByClassName("img-check-pic");
+	for(var i=0;i<img.length;i++){
+		var num=parseInt(Math.random()*4)*60;
+		console.log(num);
+		img[i].style.cssText="background-position-x:-"+num+"px;background-position-y:-"+num+"px;"; 
+	} 
+}
+var ord=0;
+function changePosition(event){
+	var e=event||window.event;
+	console.log(e.target);
+	ord+=60;
+	if(ord>180){
+		ord=0;
+	}
+	e.target.style.backgroundPositionX=-ord+"px";
+}
+function changePosition(event){
+	var e=event||window.event;
+	console.log(e.target);
+	ord+=60;
+	if(ord>180){
+		ord=0;
+	}
+	e.target.style.backgroundPositionX=-ord+"px";
+}
+function changePosition(event){
+	var e=event||window.event;
+	console.log(e.target);
+	ord+=60;
+	if(ord>180){
+		ord=0;
+	}
+	e.target.style.backgroundPositionX=-ord+"px";
+}
+function changePosition(event){
+	var e=event||window.event;
+	console.log(e.target);
+	ord+=60;
+	if(ord>180){
+		ord=0;
+	}
+	e.target.style.backgroundPositionX=-ord+"px";
+}
+function changeyzm(){
+	var imgs=document.getElementById("img-check-pics");
+	var po0x=parseInt(imgs.children[0].style.backgroundPositionX);
+	var po0y=parseInt(imgs.children[0].style.backgroundPositionY);
+	var po1x=parseInt(imgs.children[1].style.backgroundPositionX);
+	var po1y=parseInt(imgs.children[1].style.backgroundPositionY);
+	var po2x=parseInt(imgs.children[2].style.backgroundPositionX);
+	var po2y=parseInt(imgs.children[2].style.backgroundPositionY);
+	var po3x=parseInt(imgs.children[3].style.backgroundPositionX);
+	var po3y=parseInt(imgs.children[3].style.backgroundPositionY);
+	if(po0x==-60&&po0y==0){
+		if(po1x==-180&&po1y==-60){
+			if(po2x==-120&&po2y==-120){
+				if(po3x==0&&po3y==-180){
+					var i=0;
+					var str="";
+					while(i<4){
+						var num1=parseInt(Math.random()*123);
+						if((num1>=48 && num1<=57)||(num1>=65 && num1<=90)||(num1>=97 && num1<=122)){
+							str+=String.fromCharCode(num1);
+							i++;
+						}
+					}
+					$("span").innerHTML=str;
+					$("img-check-tip").innerHTML="";	
+				}
+			}
+		}			
+	}else{
+		$("img-check-tip").innerHTML="请将图形验证码翻转至正确方向";	
+	}
+	
+}
+function inten(){
+	var pws=$("pwd").value;
+	if(pws.length>0 && pws.length<=6){
+		$("sp1").style.cssText="background:red;color:#fff";
+		$("sp2").style.cssText="color:#e01";
+		$("sp3").style.cssText="color:#e01";
+		$("tips").innerHTML="密码只支持6-20位字符";
+		$("pwd").style.cssText="border-color:red !important;";
+		$("err-tip").style.cssText="display:block;top:462px;left:716.5px;";
+	}
+	if(pws.length>6 && pws.length<=10){
+		$("sp1").style.cssText="background:#ff0;color:#fff";
+		$("sp2").style.cssText="background:#ff0;color:#fff";
+		$("sp3").style.cssText="color:#f6da1e";
+		$("err-tip").style.cssText="display:block;top:462px;left:716.5px;";
+		$("tips").innerHTML="密码须字母和数字组合";
+	}
+	if(pws.length>10){
+		$("sp1").style.cssText="background:#3ee392;color:#fff";
+		$("sp2").style.cssText="background:#3ee392;color:#fff";
+		$("sp3").style.cssText="background:#3ee392;color:#fff";
+		$("tips").innerHTML="";
+		$("pwd").style.cssText="border-color:#dbdbdb";
+		$("err-tip").style.cssText="display:none";
+	}
+}
+//引入类库，使用类库中的正则封装函数验证表单 
+window.onload=function(){
+	$("phone").onblur=function(){//失去光标事件	
+		var phone=$("phone").value;
+		var phonetishi=checkAll("Phone",phone);
+		if(phone==""){
+			$("err-tip").style.cssText="display:block;top:210px;left:775.5px;";
+			$("tips").innerHTML="请输入手机号码";
+			return false;
+		}else{
+			$("err-tip").style.cssText="display:none";
+			$("tips").innerHTML="";
+		}
+		if(!phonetishi){
+			$("err-tip").style.cssText="display:block;top:210px;left:775.5px;";
+			$("tips").innerHTML="手机号码格式不正确,请重新输入";
+			$("phone").style.cssText="border-color:red";
+			return false;
+		}else{
+			$("tips").innerHTML="";
+			$("err-tip").style.cssText="display:none";
+			$("phone").style.cssText="border-color:#dbdbdb;";
+		}
+	}
+
+	$("message").onblur=function(){//验证码只能是4位数字字母			
+		var message=$("message").value;
+		var span=$("span").innerHTML;
+		showCode=message.toLowerCase();//全部转小写
+		span=span.toLowerCase();
+		var showCodetishi=checkAll("showCode",message);
+		if(message==""){
+			$("err-tip").style.cssText="display:block;top:392px;left:716.5px;";
+			$("tips").innerHTML="请输入验证码";
+			return false;
+		}else{
+			$("err-tip").style.cssText="display:none";
+			$("tips").innerHTML="";
+			$("message").style.cssText="border-color:#dbdbdb";
+		}
+		if(!showCodetishi){
+			$("err-tip").style.cssText="display:block;top:392px;left:716.5px;";
+			$("tips").innerHTML="短信验证码错误";
+			$("message").style.cssText="border-color:red";
+			return false;
+		}else if(span!=showCode){
+			$("err-tip").style.cssText="display:block;top:392px;left:716.5px;";
+			$("tips").innerHTML="验证码错误";
+			$("message").style.cssText="border-color:red";
+		}else{
+
+			$("err-tip").style.cssText="display:block;top:392px;left:716.5px;";
+			$("tips").innerHTML="通过验证";
+			$("message").style.cssText="border-color:#dbdbdb;";			
+		}	
+	}
+
+	$("pwd").onblur=function(){//密码格式验证
+		var pws=$("pwd").value;
+		var pwstishi=checkAll("password",pws);
+		if(pws==""){
+			$("err-tip").style.cssText="display:block;top:462px;left:716.5px;";
+			$("tips").innerHTML="请输入密码";
+			return false;
+		}else{
+			$("err-tip").style.cssText="display:none";
+			$("tips").innerHTML="";
+		}
+		if(!pwstishi){
+			$("err-tip").style.cssText="display:block;top:462px;left:716.5px;";
+			if(pws.length>0 && pws.length<=6){
+				$("sp1").style.cssText="background:red;color:#fff";
+				$("sp2").style.cssText="color:#e01";
+				$("sp3").style.cssText="color:#e01";
+				$("err-tip").style.cssText="display:block;top:462px;left:716.5px;";
+				$("tips").innerHTML="密码只支持6-20位字符";
+			}
+			if(pws.length>6 && pws.length<=10){
+				$("sp1").style.cssText="background:#ff0;color:#fff";
+				$("sp2").style.cssText="background:#ff0;color:#fff";
+				$("sp3").style.cssText="color:#f6da1e";
+				$("err-tip").style.cssText="display:block;top:462px;left:716.5px;";
+				$("tips").innerHTML="密码须字母和数字组合";
+			}
+			if(pws.length>10 ){
+				$("sp1").style.cssText="background:#3ee392;color:#fff";
+				$("sp2").style.cssText="background:#3ee392;color:#fff";
+				$("sp3").style.cssText="background:#3ee392;color:#fff";
+				$("tips").innerHTML="";
+				$("err-tip").style.cssText="display:none";
+			}
+			return false;
+		}else{
+			$("tips").innerHTML="";
+			$("err-tip").style.cssText="display:none";
+		}
+	}	
+}
+
+var jq = $.noConflict(); 
+//MY有货下拉菜单显示
+jq(".has").on("mouseenter", function() {
+                jq('#hasTool').show();
+            })
+jq(".has").on("mouseleave", function() {
+                jq('#hasTool').hide();
+            });
+jq("#hasTool").on("mouseenter", function() {
+                jq(this).show();
+            })
+jq("#hasTool").on("mouseleave", function() {
+                jq(this).hide();
+            });
+//客户服务下拉菜单显示		
+jq(".client").on("mouseenter", function() {
+                jq('#tool-select').show();
+            })
+jq(".client").on("mouseleave", function() {
+                jq('#tool-select').hide();
+            });
+jq("#tool-select").on("mouseenter", function() {
+                jq(this).show();
+            })
+jq("#tool-select").on("mouseleave", function() {
+                jq(this).hide();
+            });
+			
+//显示密码提示
+jq("#pwd").on("focus", function() {
+                jq('#pwd-tips').show();
+            })
+jq("#pwd").on("blur", function() {
+                jq('#pwd-tips').hide();
+            });
+jq("#pwd-tips").on("focus", function() {
+                jq(this).show();
+            })
+jq("#pwd-tips").on("blur", function() {
+                jq(this).hide();
+            });
+//显示下载App二维码
+jq(".qrcode-reg").on("mouseenter", function() {
+                jq('.download').show();
+            })
+jq(".qrcode-reg").on("mouseleave", function() {
+                jq('.download').hide();
+            });
+jq(".download").on("mouseenter", function() {
+                jq(this).show();
+            })
+jq(".download").on("mouseleave", function() {
+                jq(this).hide();
+            });
+//二维码显示
+jq(".qrcode-hover-box").on("mouseenter", function() {
+                jq('#focusLeft').show();
+                jq('#downLoadAppRight').show();
+            })
+jq(".qrcode-hover-box").on("mouseleave", function() {
+                jq('#focusLeft').hide();
+                jq('#downLoadAppRight').hide();
+            });
+jq("#focusLeft").on("mouseenter", function() {
+                jq(this).show();
+            })
+jq("#downLoadAppRight").on("mouseenter", function() {
+                jq(this).show();
+            })
+jq("#focusLeft").on("mouseleave", function() {
+                jq(this).hide();
+            });
+jq("#downLoadAppRight").on("mouseleave", function() {
+                jq(this).hide();
+            });
+//滚动一定高度，显示toTop
+function show() {
+	var mytop =jq(document).scrollTop();
+	if (mytop>80){
+		jq("#show").css({'display':'block'});
+	} else if(mytop<=30){
+		jq("#show").css({'display':'none'});
+	}
+	setTimeout(show);
+}
+show();
+</script>
