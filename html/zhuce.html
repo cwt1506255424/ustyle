@@ -9,9 +9,9 @@
 <body>
 <header>
 	<div class="header-inner clear">
-    	<h2 class="logo"><a href="#"><img src="../images/logo-en.png"/></a></h2>
+    	<h2 class="logo"><a href="denglu.html"><img src="../images/logo-en.png"/></a></h2>
         <ul class="header-tool">
-            <li><span>Hi~</span><a href="#">[请登录]</a><a href="#">[免费注册]</a></li>
+            <li><span>Hi~</span><a href="denglu.html">[请登录]</a><a href="zhuce.html">[免费注册]</a></li>
             <li class="has"><a href="#">MY有货</a><img class="san" src="../images/sanjiao.png"/>
             <div id="hasTool" class="tool-select">
             	<a href="#">我的收藏</a><a href="#">优惠券</a>
@@ -37,6 +37,7 @@
     </div>
     <div class="content">
     	<div class="register">
+			<form action="../regSave.php" method="post">
 			<ul>
 				<li>
 					<select id="region">
@@ -61,7 +62,7 @@
                 </div>
                 <li class="clear">
                 	<span id="country-code" class="country-code">+86</span>
-                    <input id="phone" class="input" value="" placeholder="请输入手机号码" type="text"  />
+                    <input id="phone" name="userPhone" class="input" value="" placeholder="请输入手机号码" type="text"  />
                 </li>
 				<li id="check">
 						<div class="img-check">
@@ -81,11 +82,15 @@
 						</div>
 				</li>
 				<li class="clear chec-code">
-						<input id="message" class="input message" type="text" placeholder="短信验证码" maxlength="4"/>
-						<input id="send" class="send" value="获取短信验证码" type="button" onclick="changeyzm()" /><span id="span"></span> 
+					<input id="message" class="input message" type="text" placeholder="短信验证码" maxlength="4"/>
+					<input id="send" class="send" value="获取短信验证码" type="button" onclick="changeyzm()" /><span id="span"></span> 
+				</li>
+				<li class="clear users">
+					<input id="userId" class="input user" type="text" placeholder="请输入用户名"  name="userName"/>
+					<span id="userInfo"></span>
 				</li>
                 <li class="clear te">
-                	<input id="pwd" class="input pwd" type="password" placeholder="设置密码" maxlength="20" onkeypress="inten()"/>
+                	<input id="pwd" class="input pwd" type="password" name="userPass" placeholder="设置密码" maxlength="20" onkeypress="inten()"/>
                     <div class="pwd-intensity-container">
                     	<span id="sp1" class="pwd-intensity">低</span>
                         <span id="sp2" class="pwd-intensity">中</span>
@@ -103,7 +108,9 @@
                     </span>
                 </li>
                 <li class="reg-btn clear">
-                	<a href="denglu.html"><input type="submit" id="register-btn" class="register-btn" value="立即注册" disabled=""/></a>
+                	<a href="denglu.html" id="register-btn" onsubmit="denglu.html" class="register-btn">立即注册</a>
+					<!-- <input type="submit" value="注册"/> -->
+					<input type="submit"  class="register-btn" value="立即注册" />
                     <div class="qrcode">
                     	<a href="#" class="qrcode-reg"><i class="qrcode-icon"></i></a>
 						<div class="download">
@@ -117,9 +124,10 @@
                 </li>
                 <li class="quick-login">
                 	我已注册YOHO!BUY 有货账号
-                    <a href="#" class="link">快速登录</a>
+                    <a href="denglu.html" class="link">快速登录</a>
                 </li>			
-			</ul>		
+			</ul>
+			</form>
 		</div>
     </div>
 </section>
@@ -224,6 +232,7 @@
 <script type="text/javascript" src="../js/tools.js"></script>
 <script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
 <script type="text/javascript">
+
 //改变验证码
 function reImg(){
 	var img = document.getElementsByClassName("img-check-pic");
@@ -311,13 +320,13 @@ function inten(){
 		$("sp3").style.cssText="color:#e01";
 		$("tips").innerHTML="密码只支持6-20位字符";
 		$("pwd").style.cssText="border-color:red !important;";
-		$("err-tip").style.cssText="display:block;top:462px;left:716.5px;";
+		$("err-tip").style.cssText="display:block;top:530px;left:716.5px;";
 	}
 	if(pws.length>6 && pws.length<=10){
 		$("sp1").style.cssText="background:#ff0;color:#fff";
 		$("sp2").style.cssText="background:#ff0;color:#fff";
 		$("sp3").style.cssText="color:#f6da1e";
-		$("err-tip").style.cssText="display:block;top:462px;left:716.5px;";
+		$("err-tip").style.cssText="display:block;top:530px;left:716.5px;";
 		$("tips").innerHTML="密码须字母和数字组合";
 	}
 	if(pws.length>10){
@@ -353,7 +362,30 @@ window.onload=function(){
 			$("phone").style.cssText="border-color:#dbdbdb;";
 		}
 	}
-
+		$("userId").onblur=function(){//失去光标事件	
+		var userId=$("userId").value;
+		var userIdtishi=checkAll("username",userId);
+		if(userId==""){
+			$("err-tip").style.cssText="display:block;top:460px;left:715.5px;";
+			$("tips").innerHTML="请输入用户名";
+			return false;
+		}else{
+			$("err-tip").style.cssText="display:none";
+			$("tips").innerHTML="";
+		}
+		if(!userIdtishi){
+			$("err-tip").style.cssText="display:block;top:460px;left:715.5px;";
+			$("tips").innerHTML="用户名只能使用数字字母下划线，且数字不能开头，长度在6-15之间";
+			$("userId").style.cssText="border-color:red";
+			return false;
+		}else{
+			$("tips").innerHTML="";
+			$("err-tip").style.cssText="display:none";
+			$("userId").style.cssText="border-color:#dbdbdb;";
+			
+		}
+	}
+	
 	$("message").onblur=function(){//验证码只能是4位数字字母			
 		var message=$("message").value;
 		var span=$("span").innerHTML;
@@ -390,7 +422,7 @@ window.onload=function(){
 		var pws=$("pwd").value;
 		var pwstishi=checkAll("password",pws);
 		if(pws==""){
-			$("err-tip").style.cssText="display:block;top:462px;left:716.5px;";
+			$("err-tip").style.cssText="display:block;top:530px;left:716.5px;";
 			$("tips").innerHTML="请输入密码";
 			return false;
 		}else{
@@ -398,19 +430,19 @@ window.onload=function(){
 			$("tips").innerHTML="";
 		}
 		if(!pwstishi){
-			$("err-tip").style.cssText="display:block;top:462px;left:716.5px;";
+			$("err-tip").style.cssText="display:block;top:530;left:716.5px;";
 			if(pws.length>0 && pws.length<=6){
 				$("sp1").style.cssText="background:red;color:#fff";
 				$("sp2").style.cssText="color:#e01";
 				$("sp3").style.cssText="color:#e01";
-				$("err-tip").style.cssText="display:block;top:462px;left:716.5px;";
+				$("err-tip").style.cssText="display:block;top:530px;left:716.5px;";
 				$("tips").innerHTML="密码只支持6-20位字符";
 			}
 			if(pws.length>6 && pws.length<=10){
 				$("sp1").style.cssText="background:#ff0;color:#fff";
 				$("sp2").style.cssText="background:#ff0;color:#fff";
 				$("sp3").style.cssText="color:#f6da1e";
-				$("err-tip").style.cssText="display:block;top:462px;left:716.5px;";
+				$("err-tip").style.cssText="display:block;top:530px;left:716.5px;";
 				$("tips").innerHTML="密码须字母和数字组合";
 			}
 			if(pws.length>10 ){
@@ -429,6 +461,22 @@ window.onload=function(){
 }
 
 var jq = $.noConflict(); 
+jq("#userId").blur(function(){
+	jq.ajax({
+		url:"../checkUser.php",
+		data:"userName="+this.value,
+		async:true,
+		type:"get",
+		success:function(data){
+			if(data=="1"){
+				jq("#userInfo").html("该用户名已经被注册了");
+			}else{
+				jq("#userInfo").html("该用户名没有被用");
+			}
+		}
+	});
+});
+
 //MY有货下拉菜单显示
 jq(".has").on("mouseenter", function() {
                 jq('#hasTool').show();

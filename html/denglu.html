@@ -27,8 +27,6 @@
         </ul>
     </div>
 </header>
-
-
 <section id="logIn" class="margin">
 	<div class="passport">
     	<div class="cover">
@@ -93,8 +91,11 @@
 					</div>
 				</li>
 				<li class="relative yincang">
-					<input id="account1" class="input" type="text" placeholder="邮箱/手机号码"/>
+					<input id="userId" class="input user" type="text" placeholder="请输入用户名"  name="userName"/>
 					<span id="err-tip" class="err-tip" style="top:0px"></span>
+					
+				</li>				
+				
 				</li>
 				<li class="relative yincang">
 					<input id="password" class="input" type="password" maxlength="20" placeholder="密码"/>
@@ -129,7 +130,8 @@
 				</li>
 				
 				<li class="relative">
-					<a href="../index.html"><span id="login-btn" class="login-btn">登录</span></a>
+					<a ><span id="btnLogin" class="login-btn">登录</span></a>
+					<span id="errmsg"></span>
 				</li>
 				<li class="other-opts">
 					<span class="remember-me">
@@ -412,25 +414,24 @@ window.onload=function(){
 			$("message").style.cssText="border-color:#dbdbdb;";			
 		}	
 	}
-
-	$("account1").onblur=function(){//失去光标事件	
-		var email=$("account1").value;
-		var emailtishi=checkAll("email",email);
-		if(email==""){
+	$("userId").onblur=function(){//失去光标事件	
+		var userId=$("userId").value;
+		var userIdtishi=checkAll("username",userId);
+		if(userId==""){
 			$("err-tip").style.cssText="display:block;top:8px;left:285px;";
-			$("err-tip").innerHTML="请输入邮箱";
+			$("err-tip").innerHTML="请输入用户名";
 			return false;
 		}else{
-			$("err-tip").innerHTML="";
+			$("err-tip").style.cssText="display:none";
 		}
-		if(!emailtishi){
+		if(!userIdtishi){
 			$("err-tip").style.cssText="display:block;top:0px;left:285px;";
-			$("err-tip").innerHTML="邮箱格式不正确，请重新输入";
-			$("account1").style.cssText="border-color:red";
+			$("err-tip").innerHTML="用户名只能使用数字字母下划线";
+			$("userId").style.cssText="border-color:red";
 			return false;
 		}else{
-			$("err-tip").innerHTML="";
-			$("account1").style.cssText="border-color:#dbdbdb;";
+			$("err-tip").style.cssText="display:none";
+			$("userId").style.cssText="border-color:#dbdbdb;";
 		}
 	}
 	$("password").onblur=function(){//失去光标事件	
@@ -453,11 +454,52 @@ window.onload=function(){
 			$("password").style.cssText="border-color:#dbdbdb;";
 		}
 	}
-	
+
+	$("btnLogin").onclick=function(){
+		var uname=$("userId").value;
+		var upws=$("password").value;
+		var date=new Date();
+		date.setDate(date.getDate()+7);
+		document.cookie="uname="+uname+"; expires="+date.toGMTString();
+		document.cookie="upws="+upws+"; expires="+date.toGMTString();
+	};
+//页面加载时读取cookie
+	var arr=document.cookie.split("; ");//uname=zhang
+	var uname,upws;
+	for(var i in arr){//uname=zhang
+		var item=arr[i].split("=");//[uname,zhang]
+		if(item[0]=="uname"){
+			uname=item[1];
+		}
+		if(item[0]=="upws"){
+			upws=item[1];
+		}
+	}
+	/*if(uname && upws){//用户名密码不为空
+		window.location.href="../index.html";
+	}*/
+
 }
 
 
 var jq = $.noConflict();
+
+jq("#btnLogin").click(function(){
+	jq.ajax({
+		url:"../loginCheck.php",
+		async:true,
+		data:"userName="+jq('#userId').val()+"&userPass="+jq("#password").val(),
+		type:"post",
+		success:function(data){
+			if(data=="1"){
+				//保存cookie
+				location.href="../index.html";
+			}else{
+				jq("#errmsg").html("亲，用户名或者密码错误，登录失败，请想好再输！");
+			}
+		}		
+	});	
+});
 //国家码显示
 jq(function(){	
 	jq("#guojia").click(function(){

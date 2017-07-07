@@ -367,45 +367,53 @@
 		<a class="sort-type">新品<img src="../images/shangxia.png"/></a>
 		<a class="sort-type">价格<img src="../images/shangxia.png"/></a>
 		<a class="sort-type">折扣<img src="../images/shangxia.png"/></a>
-		<a class="checks"><input type="checkbox" /> 新品</a>
+		<a class="checks"><input type="checkbox"/>&ensp;&nbsp;新品</a>
+		<a class="checks"><input type="checkbox"/>&ensp;&nbsp;打折</a>
+		<div class="pager-wrap">
+			<div class="page-count">
+				<span>&ensp;60&nbsp;<img src="../images/renqi.png"/></span>每页
+			</div>
+			<p class="page-orient">
+				<span class="back">&lt;&ensp;</span><span><i>1</i>/21</span><span class="go"><a href="#">&ensp;&gt;</a></span>
+			</p>
+		</div>
 	</div>
-	
+	<div class="goods-container">
+		<div class="box">
+			<div class="good-item-wrapper">
+				<div class="good-select-color"><img src="../images/list1.jpg"/></div>
+				<div class="good-info">
+					<div class="good-detail-img">
+						<a class="good-thumb"><img class="lazy" src="../images/list1.jpg"/></a>
+					</div>
+					<div class="good-detail-text">
+						<a class="">BABAMA 羽毛吊坠</a>
+						<p class="brand"><a>BABAMA</a></p>
+						<p class="price ">
+							<span class="market-price">￥1078.00</span>
+							<span class="sale-price">￥259.00</span>
+						</p>
+					</div>		
+				</div>
+			</div>
+			<div class="good-info">
+					<div class="good-detail-img">
+						<a class="good-thumb"><img class="lazy" src="../images/list1.jpg"/></a>
+					</div>
+					<div class="good-detail-text">
+						<a class="">BABAMA 羽毛吊坠</a>
+						<p class="brand"><a>BABAMA</a></p>
+						<p class="price ">
+							<span class="market-price">￥1078.00</span>
+							<span class="sale-price">￥259.00</span>
+						</p>
+					</div>		
+			</div>
+		</div>
+	</div>
 
 
-	
-	<div></div>
-	<div></div>
-	
-	<div></div>
-	<div></div>
-	
-	<div class=""></div>
-	<div class=""></div>
-	<div class=""></div>
-	<div class=""></div>
-	<div></div>
-	<div></div>
-	
-	<div></div>
-	<div></div>
 </section>
-
-
-
-
-
-
-
-
-<section></section>
-<section></section>
-
-
-
-
-
-
-
 
 
 
@@ -566,6 +574,16 @@ jq(function(){
 		});
 	});	
 });
+//商品显示与隐藏
+
+jq(".box").on("mouseenter", function() {
+	jq('.good-item-wrapper').show();
+})
+jq(".box").on("mouseleave", function() {
+	jq('.good-item-wrapper').hide();
+});
+
+
 //收起促销显示与隐藏
 jq(function(){	
 	jq("#activity-title").click(function(){

@@ -257,12 +257,12 @@
 	<div class="main clear margin">
 		<div class="main-l">
 			<div class="main-l-img">
-				<div class="main-l-img-tags">
+				<div id="min-img" class="zoomMiddle">
+					<img src="../images/img011.jpg"/>
+					<div class="mask"></div>
 				</div>
-				<div id="min-img">
-					<img id="img-show" src="../images/img011.jpg"/>
-					<div class="magnifier"></div>
-				</div>
+				<div class="zoomLarge" style="z-index:1000"><img src="../images/img6.jpg" /></div>
+				
 				<div class="share-row">
 					<span class="title">分享：</span>
 					<span class="share-wrapper">
@@ -726,7 +726,9 @@
 </div>
 
 <script type="text/javascript" src="../js/tools.js"></script>
+<script type="text/javascript" src="../js/fangdajing.js"></script>
 <script type="text/javascript" src="../js/move.js"></script>
+<script type="text/javascript" src="../js/xiangqing.js"></script>
 <script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
 <script type="text/javascript">
 window.onload=function(){
@@ -766,9 +768,8 @@ function sel(data){
 }
 //li单击显示详情
 
-
-
 var jq = $.noConflict();
+
 //logo换图
 jq(function(){
 	jq("#logo").mouseenter(function(){
@@ -908,6 +909,49 @@ function show(){
 	setTimeout(show);
 }
 show();
+
+
+jq(function(){
+  var now = 0;
+  var zoomMiddleDiv = jq('.zoomMiddle');
+
+  zoomMiddleDiv.mousemove(function(e){
+    jq('.mask').show();
+    jq('.zoomLarge').show();
+    zoomMiddleDivOffset = zoomMiddleDiv.offset();
+    var x = e.pageX - zoomMiddleDivOffset.left - jq('.mask').width()/2;
+    var y = e.pageY - zoomMiddleDivOffset.top - jq('.mask').height()/2;
+    if(x<=0){
+      x=0;
+    }else if(x>=zoomMiddleDiv.width()-jq('.mask').width()){
+      x = zoomMiddleDiv.width()-jq('.mask').width();
+    }
+    if(y<=0){
+      y=0;
+    }else if(y>=zoomMiddleDiv.height()-jq('.mask').height()){
+      y = zoomMiddleDiv.height()-jq('.mask').height();
+    }
+    var percentageX = x/(zoomMiddleDiv.width()-jq('.mask').width());
+    var percentageY = y/(zoomMiddleDiv.height()-jq('.mask').height());
+    jq('.zoomLarge img').css({
+      left:-percentageX*(600-jq('.zoomLarge').width()),
+      top:-percentageY*(600-jq('.zoomLarge').height())
+    });
+    jq('.mask').css({
+      'left':x+'px',
+      'top':y+'px'
+    });
+  });
+  zoomMiddleDiv.mouseout(function(){
+    jq('.mask').hide();
+    jq('.zoomLarge').hide();
+  });
+});
+
+
+
+
+
 </script>
 
 </body>
