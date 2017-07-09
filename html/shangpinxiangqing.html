@@ -733,7 +733,6 @@
 <script type="text/javascript">
 window.onload=function(){
    var Li = (document.getElementById("wrapL").children[0].offsetWidth+10);//获取单个图片li的宽
-   console.log(Li)
    var obannerimg = document.getElementById("wrapL").children;//获取li
    var cbannerimg = obannerimg[0].cloneNode(true)//克隆
    $("wrapL").appendChild(cbannerimg);
@@ -769,6 +768,16 @@ function sel(data){
 //li单击显示详情
 
 var jq = $.noConflict();
+jq(function(){
+	jq.ajax({
+		url:"../php/getGoodsInfo.php",
+		type:"get",
+		success:function(data){
+		var obj=eval(data);
+
+		}
+	});
+})
 
 //logo换图
 jq(function(){

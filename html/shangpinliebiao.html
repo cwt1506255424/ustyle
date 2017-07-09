@@ -378,39 +378,61 @@
 			</p>
 		</div>
 	</div>
-	<div class="goods-container">
-		<div class="box">
-			<div class="good-item-wrapper">
-				<div class="good-select-color"><img src="../images/list1.jpg"/></div>
-				<div class="good-info">
-					<div class="good-detail-img">
-						<a class="good-thumb"><img class="lazy" src="../images/list1.jpg"/></a>
-					</div>
-					<div class="good-detail-text">
-						<a class="">BABAMA 羽毛吊坠</a>
-						<p class="brand"><a>BABAMA</a></p>
-						<p class="price ">
-							<span class="market-price">￥1078.00</span>
-							<span class="sale-price">￥259.00</span>
-						</p>
-					</div>		
-				</div>
+	<ul class="goods-container clear">
+		<li class="good-info">
+			<div class="good-detail-img">
+				<a class="good-thumb"><img class="lazy" src="../images/list1.jpg"/></a>
 			</div>
-			<div class="good-info">
-					<div class="good-detail-img">
-						<a class="good-thumb"><img class="lazy" src="../images/list1.jpg"/></a>
-					</div>
-					<div class="good-detail-text">
-						<a class="">BABAMA 羽毛吊坠</a>
-						<p class="brand"><a>BABAMA</a></p>
-						<p class="price ">
-							<span class="market-price">￥1078.00</span>
-							<span class="sale-price">￥259.00</span>
-						</p>
-					</div>		
+			<div class="good-detail-text">
+				<a class="">BABAMA 羽毛吊坠</a>
+				<p class="brand"><a>BABAMA</a></p>
+				<p class="price ">
+					<span class="market-price">￥1078.00</span>
+					<span class="sale-price">￥259.00</span>
+				</p>
 			</div>
-		</div>
-	</div>
+		</li>
+		<li class="good-info">
+			<div class="good-detail-img">
+				<a class="good-thumb"><img class="lazy" src="../images/list2.jpg"/></a>
+			</div>
+			<div class="good-detail-text">
+				<a class="">BABAMA 羽毛吊坠</a>
+				<p class="brand"><a>BABAMA</a></p>
+				<p class="price ">
+					<span class="market-price">￥1078.00</span>
+					<span class="sale-price">￥259.00</span>
+				</p>
+			</div>
+		</li>
+		<li class="good-info">
+			<div class="good-detail-img">
+				<a class="good-thumb"><img class="lazy" src="../images/list3.jpg"/></a>
+			</div>
+			<div class="good-detail-text">
+				<a class="">BABAMA 羽毛吊坠</a>
+				<p class="brand"><a>BABAMA</a></p>
+				<p class="price ">
+					<span class="market-price">￥1078.00</span>
+					<span class="sale-price">￥259.00</span>
+				</p>
+			</div>
+		</li>
+		<li class="good-info">
+			<div class="good-detail-img">
+				<a class="good-thumb"><img class="lazy" src="../images/list4.jpg"/></a>
+			</div>
+			<div class="good-detail-text">
+				<a class="">BABAMA 羽毛吊坠</a>
+				<p class="brand"><a>BABAMA</a></p>
+				<p class="price ">
+					<span class="market-price">￥1078.00</span>
+					<span class="sale-price">￥259.00</span>
+				</p>
+			</div>
+		</li>
+		
+	</ul>
 
 
 </section>
@@ -518,46 +540,31 @@
 <script type="text/javascript" src="../js/move.js"></script>
 <script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
 <script type="text/javascript">
-window.onload=function(){
-   var Li = (document.getElementById("wrapL").children[0].offsetWidth+10);//获取单个图片li的宽
-   console.log(Li)
-   var obannerimg = document.getElementById("wrapL").children;//获取li
-   var cbannerimg = obannerimg[0].cloneNode(true)//克隆
-   $("wrapL").appendChild(cbannerimg);
-   $("wrapL").style.width = Li*obannerimg.length+"px"
-   /*换一批*/
-  var num = 0;
-   $("change").onclick = function(){
-	   num++;
-	   if(num>=obannerimg.length){
-		num=1	;
-		$("wrapL").style.left = 0+"px";
-	   }
-		console.log(num)
-	 move($("wrapL"),"left",-Li*num);
-	}
-}
-function sel(data){
-	var liarr=document.getElementById("tab_t").children;
-	for(var i in liarr){
-		liarr[i].className="";
-	}
-	liarr[data-1].className="act";
-	var tab_c=document.getElementById("tab_c");
-	var divarr=[];
-	for(var i in tab_c.childNodes){
-		if(tab_c.childNodes[i].nodeType==1){
-			tab_c.childNodes[i].className="hide";
-			divarr.push(tab_c.childNodes[i]);
-		}
-	}
-	divarr[data-1].className="";
-}
-//li单击显示详情
-
 
 
 var jq = $.noConflict();
+jq(function(){
+	jq.ajax({
+		url:"../php/getGoodsList.php",
+		type:"get",
+		success:function(data){
+		var obj=eval(data);
+		for(var i=0;i<24;i++){
+			let goodsName=obj[i].goodsName;
+			let goodsType=obj[i].goodsType;
+			let goodsPrice=obj[i].goodsPrice;
+			let goodsImg=obj[i].goodsImg;
+			let goodsDesc=obj[i].goodsDesc;
+            let beiyong1=obj[i].beiyong1;
+			let str='<li class="good-info"><div class="good-detail-img"><a class="good-thumb"><img class="lazy" src="'+obj[i].goodsImg+'"/></a></div><div class="good-detail-text"><a>'+obj[i].goodsName+'</a><p class="brand"><a>'+obj[i].goodsDesc+'</a></p><p class="price "><span class="market-price">￥'+obj[i].beiyong1+'</span><span class="sale-price">￥'+obj[i].goodsPrice+'</span></p></div></li>';
+			jq(".goods-container").append(str);
+		}
+		}
+	});
+})
+
+
+
 //logo换图
 jq(function(){
 	jq("#logo").mouseenter(function(){

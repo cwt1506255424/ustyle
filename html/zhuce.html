@@ -37,7 +37,7 @@
     </div>
     <div class="content">
     	<div class="register">
-			<form action="../regSave.php" method="post">
+			<form action="../php/regSave.php" method="post">
 			<ul>
 				<li>
 					<select id="region">
@@ -62,7 +62,7 @@
                 </div>
                 <li class="clear">
                 	<span id="country-code" class="country-code">+86</span>
-                    <input id="phone" name="userPhone" class="input" value="" placeholder="请输入手机号码" type="text"  />
+                    <input id="phone" name="userPhone" class="input" value="" placeholder="请输入手机号码" type="text" required="required"/>
                 </li>
 				<li id="check">
 						<div class="img-check">
@@ -82,15 +82,15 @@
 						</div>
 				</li>
 				<li class="clear chec-code">
-					<input id="message" class="input message" type="text" placeholder="短信验证码" maxlength="4"/>
+					<input id="message" class="input message" type="text" placeholder="短信验证码" maxlength="4" required="required"/>
 					<input id="send" class="send" value="获取短信验证码" type="button" onclick="changeyzm()" /><span id="span"></span> 
 				</li>
 				<li class="clear users">
-					<input id="userId" class="input user" type="text" placeholder="请输入用户名"  name="userName"/>
+					<input id="userId" class="input user" type="text" placeholder="请输入用户名"  name="userName" required="required"/>
 					<span id="userInfo"></span>
 				</li>
                 <li class="clear te">
-                	<input id="pwd" class="input pwd" type="password" name="userPass" placeholder="设置密码" maxlength="20" onkeypress="inten()"/>
+                	<input id="pwd" class="input pwd" type="password" name="userPass" placeholder="设置密码" maxlength="20" required="required" onkeypress="inten()"/>
                     <div class="pwd-intensity-container">
                     	<span id="sp1" class="pwd-intensity">低</span>
                         <span id="sp2" class="pwd-intensity">中</span>
@@ -108,9 +108,9 @@
                     </span>
                 </li>
                 <li class="reg-btn clear">
-                	<a href="denglu.html" id="register-btn" onsubmit="denglu.html" class="register-btn">立即注册</a>
-					<!-- <input type="submit" value="注册"/> -->
-					<input type="submit"  class="register-btn" value="立即注册" />
+                	<!-- <input type="submit" value="注册"/> <input type="submit" id="lijizhuce" class="register-btn" value="立即注册" />-->
+                	
+					<input type="button" id="lijizhuce" class="register-btn" value="立即注册" />
                     <div class="qrcode">
                     	<a href="#" class="qrcode-reg"><i class="qrcode-icon"></i></a>
 						<div class="download">
@@ -272,7 +272,7 @@ function changePosition(event){
 }
 function changePosition(event){
 	var e=event||window.event;
-	console.log(e.target);
+	//console.log(e.target);
 	ord+=60;
 	if(ord>180){
 		ord=0;
@@ -346,6 +346,7 @@ window.onload=function(){
 		if(phone==""){
 			$("err-tip").style.cssText="display:block;top:210px;left:775.5px;";
 			$("tips").innerHTML="请输入手机号码";
+			$("lijizhuce").style.cssText="disabled:disabled";
 			return false;
 		}else{
 			$("err-tip").style.cssText="display:none";
@@ -355,6 +356,7 @@ window.onload=function(){
 			$("err-tip").style.cssText="display:block;top:210px;left:775.5px;";
 			$("tips").innerHTML="手机号码格式不正确,请重新输入";
 			$("phone").style.cssText="border-color:red";
+			$("lijizhuce").style.cssText="disabled:disabled";
 			return false;
 		}else{
 			$("tips").innerHTML="";
@@ -368,6 +370,7 @@ window.onload=function(){
 		if(userId==""){
 			$("err-tip").style.cssText="display:block;top:460px;left:715.5px;";
 			$("tips").innerHTML="请输入用户名";
+			$("lijizhuce").style.cssText="disabled:disabled";
 			return false;
 		}else{
 			$("err-tip").style.cssText="display:none";
@@ -377,6 +380,7 @@ window.onload=function(){
 			$("err-tip").style.cssText="display:block;top:460px;left:715.5px;";
 			$("tips").innerHTML="用户名只能使用数字字母下划线，且数字不能开头，长度在6-15之间";
 			$("userId").style.cssText="border-color:red";
+			$("lijizhuce").style.cssText="disabled:disabled";
 			return false;
 		}else{
 			$("tips").innerHTML="";
@@ -395,6 +399,8 @@ window.onload=function(){
 		if(message==""){
 			$("err-tip").style.cssText="display:block;top:392px;left:716.5px;";
 			$("tips").innerHTML="请输入验证码";
+			$("lijizhuce").style.cssText="disabled:disabled";
+			
 			return false;
 		}else{
 			$("err-tip").style.cssText="display:none";
@@ -405,6 +411,7 @@ window.onload=function(){
 			$("err-tip").style.cssText="display:block;top:392px;left:716.5px;";
 			$("tips").innerHTML="短信验证码错误";
 			$("message").style.cssText="border-color:red";
+			$("lijizhuce").style.cssText="disabled:disabled";
 			return false;
 		}else if(span!=showCode){
 			$("err-tip").style.cssText="display:block;top:392px;left:716.5px;";
@@ -424,6 +431,7 @@ window.onload=function(){
 		if(pws==""){
 			$("err-tip").style.cssText="display:block;top:530px;left:716.5px;";
 			$("tips").innerHTML="请输入密码";
+			$("lijizhuce").style.cssText="disabled:disabled";
 			return false;
 		}else{
 			$("err-tip").style.cssText="display:none";
@@ -452,6 +460,7 @@ window.onload=function(){
 				$("tips").innerHTML="";
 				$("err-tip").style.cssText="display:none";
 			}
+			$("lijizhuce").style.cssText="disabled:disabled";
 			return false;
 		}else{
 			$("tips").innerHTML="";
@@ -463,7 +472,7 @@ window.onload=function(){
 var jq = $.noConflict(); 
 jq("#userId").blur(function(){
 	jq.ajax({
-		url:"../checkUser.php",
+		url:"../php/checkUser.php",
 		data:"userName="+this.value,
 		async:true,
 		type:"get",
@@ -475,6 +484,25 @@ jq("#userId").blur(function(){
 			}
 		}
 	});
+});
+
+
+
+jq("#lijizhuce").click(function(){
+	jq.ajax({
+		url:"../php/regSave.php",
+		async:true,
+		data:"userName="+jq('#userId').val()+"&userPass="+jq('#pwd').val()+"&userPhone="+jq('#phone').val(),
+		type:"post",
+		success:function(data){
+			console.log(data)
+			if(data=="1"){
+				location.href="denglu.html";
+			}else{
+				alert("注册失败，请重新输入")
+			}
+		}		
+	});	
 });
 
 //MY有货下拉菜单显示
@@ -552,7 +580,7 @@ jq("#downLoadAppRight").on("mouseleave", function() {
                 jq(this).hide();
             });
 //滚动一定高度，显示toTop
-function show() {
+function show(){
 	var mytop =jq(document).scrollTop();
 	if (mytop>80){
 		jq("#show").css({'display':'block'});
