@@ -90,6 +90,7 @@ header .header-r .hot a{margin-right:18px;}
 #center .nav{font-size:12px;padding:15px 0;height:18px;line-height:18px;color:#444;}
 #center .nav .last{font-weight:700;}
 #center .main{min-height:560px;}
+
 #center .main .main-l{float:left;}
 #center .main .main-l .main-l-img{position:relative;width:420px;height:600px;float:left;}
 #center .main .main-l .main-l-img .main-l-img-tags{position:absolute;top:0;left:0;}
@@ -106,6 +107,11 @@ header .header-r .hot a{margin-right:18px;}
 #center .main .main-l .main-l-img .share-row .share-wrapper .qq{background-image:url(../images/sprite.base.png);background-position:-18px -32px;}
 #center .main .main-l .main-l-img .share-row .share-wrapper .renren{background-image:url(../images/sprite.base.png);background-position:-36px -32px;}
 #center .main .main-l .main-l-img .share-row .share-wrapper .douban{background-image:url(../images/sprite.base.png);background-position:-54px -50px;}
+#center .main .main-l .zoomMiddle{border: 1px solid #ccc;margin-bottom:3px;position: relative;margin-left:1px;} 
+#center .main .main-l .zoomMiddle img{width:420px;height:560px;}
+#center .main .main-l .mask{width:200px;height:200px;background:#f7e4e6;opacity:0.4;position:absolute;left:0;top:0;display:none;}
+#center .main .main-l .zoomLarge{width:350px;height:350px;border: 1px solid #ccc;position:absolute;top:0;left:700px;overflow:hidden;display:none;background:#fff;}
+#center .main .main-l .zoomLarge img{width:600px;height:600px;position:absolute;left:0;top:0;}
 
 #center .main .thumbs{width:75px;height:560px;margin-left:10px;margin-right:60px;float:left;}
 #center .main .thumbs .thumb-wrap img{border: 2px solid #000;}
@@ -166,7 +172,7 @@ header .header-r .hot a{margin-right:18px;}
 #content .cont{display:flex;justify-content:space-between;flex-wrap:wrap;}
 #content .cont .tu{vertical-align:baseline;display:inline-block;width:120px;height:40px;}
 #content .cont .name{display:inline-block;width:120px;line-height:20px;color:#000;text-align:center;font-size:16px;}
-#content .cont .text{display:inline-block;width:510px;padding-left:39px;line-height:24px;font-size:14px;border-left:1px solid #eaeceb;color:#444;}
+#content .cont .text{display:inline-block;width:508px;padding-left:39px;line-height:24px;font-size:14px;border-left:1px solid #eaeceb;color:#444;}
 #content .warn{display:block;height:18px;text-align:center;margin-top:30px;}
 #content .warn .warning{width:16px;height:16px;}
 #content .warn span{color:#d0021b;font-size:14px;line-height:18px;height:18px;}

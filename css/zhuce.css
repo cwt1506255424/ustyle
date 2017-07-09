@@ -32,7 +32,7 @@ header .header-tool .tool-select{display:none;}
 header .header-tool .tool-select a{display:block;padding:0 0 0 15px;border-top:1px solid #ddd;font-size:12px;vertical-align:middle;}
 header .header-tool #tool-select{width:84px;}
 header .header-tool li{font-size:12px;vertical-align:middle;display:inline-block;padding:0 12px;line-height:28px;}
-#logIn{height:658px;}
+#logIn{height:770px;}
 #logIn .passport{float:left;margin:107px 0;width:575px;}
 #logIn .passport .cover{padding:50px 0;width:100%;height:318px;border-right:1px solid #dfdfdf;}
 #logIn .passport .cover img{display:block;margin:0 auto;margin-top:0px;margin-top:50px;width:252px;height:190px;}
@@ -63,7 +63,9 @@ header .header-tool li{font-size:12px;vertical-align:middle;display:inline-block
 #logIn .content .register #check .img-check .img-check-b .img-check-tip{display:inline-block;position:absolute;left:0;top:90px;font-size:13px;line-height:19px;height:19px;color:red;}
 
 
-
+#logIn .content .register li.users{width:268px;height:45px;position:relative;}
+#logIn .content .register li.users #userInfo{width:268px;height:45px;position:absolute;left:285px;font:20px/45px "";color:red;}
+#logIn .content .register li .user{width:268px;}
 #logIn .content .register li.te{height:69px}
 #logIn .content .register li.te .pwd-tips{display:none;position:absolute;top:-10px;left:285px;padding-top:7px;width:160px !important;height:72px;background-image:url(../images/sprite.passport.png);background-position:-142px -152px;font-size:12px;}
 #logIn .content .register li.te .pwd-tips>div{position:relative;margin-left:15px;padding-left:15px;height:22px;color:#b9b9b9;font-size:12px;line-height:22px;}
@@ -78,6 +80,7 @@ header .header-tool li{font-size:12px;vertical-align:middle;display:inline-block
 #logIn .content .register li.items{white-space:nowrap;}
 #logIn .content .register li .link{color:#ff1901;text-decoration:underline;}
 #logIn .content .register li.reg-btn{white-space:nowrap;}
+#logIn .content .register li.reg-btn>a{display:block;width:270px;height:45px;}
 #logIn .content .register .reg-btn .register-btn{width:270px;background:#555;font-weight:700;font-size:20px;float:left;cursor:default;padding:0;height:45px;border:none;color:#fff;text-align:center;font-family:黑体;line-height:45px;}
 #logIn .content .register .reg-btn .qrcode{position:absolute;right:0;position:relative;width:55px;}
 #logIn .content .register .reg-btn .qrcode .qrcode-reg{margin-left:10px;width:45px;height:45px;border:1px solid #b0b0b0;box-sizing:border-box;text-align: center;display:inline-block;}

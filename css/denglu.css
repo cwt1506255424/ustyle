@@ -67,8 +67,7 @@ header .header-tool .client{padding-left:14px;}
 #logIn .desktop-login .relative .switch .right{color:#000;float:right;width:146px;height:27px;text-align:center;line-height:27px;border-radius:13px;position:absolute;right:0;cursor:pointer;}
 #logIn .desktop-login #ph,#check,#yanzhengCode{display:none;}
 
-
-#logIn .desktop-login{color:#b9b9b9;font-size:14px;}
+#logIn .desktop-login{color:#000;font-size:14px;}
 #logIn .desktop-login .err-tip{display:none;position:absolute;z-index:1000;padding:0 10px;height:30px;color:red;line-height:30px;}
 #logIn .desktop-login li{position:relative;margin-bottom:25px;width:270px;}
 #logIn .desktop-login li.ph{height:43px;position:relative;}
@@ -98,6 +97,7 @@ header .header-tool .client{padding-left:14px;}
 
 
 #logIn .desktop-login .relative .input{width:268px;height:43px;border:1px solid #dbdbdb;color:rgba(0,0,0,.5);text-indent:10px;font-size:16px;line-height:1.2;}
+#logIn .desktop-login #errmsg{white-space:nowrap;}
 #logIn .desktop-login .relative .err-tip{position:absolute;top:8px;left:285px;padding:6px 0;color:red;white-space:nowrap;font-size:14px;}
 #logIn .desktop-login .relative.yincang #err-tip{top:0;}
 #logIn .desktop-login .relative .caps-lock{display:none;position:absolute;top:8px;left:278px;padding:0 20px;height:27px;border:#ffe57d;background:#fff6d2;color:#666;white-space:nowrap;line-height:30px;}
