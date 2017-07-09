@@ -24,9 +24,9 @@
 		
 		//3、响应
 		if($count==1){
-			location.href="denglu.html";
+			echo "1";
 		}else{
-			echo "注册失败";
+			echo "0";
 		}
 	}	
 ?>
