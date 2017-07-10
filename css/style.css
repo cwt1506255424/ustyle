@@ -197,15 +197,6 @@ header .header-l ul li {
   text-align: center;
   color: #000; }
 
-header .header-l ul li:first-child {
-  background-color: #3a3a3a; }
-
-header .header-l ul li:first-child h5 a {
-  color: #fff; }
-
-header .header-l ul li:first-child a {
-  color: #fff; }
-
 header .header-l ul li h5 {
   margin: 0;
   padding: 0;
@@ -220,6 +211,34 @@ header .header-l ul li a {
 
 header .header-l ul li .name-c a {
   color: #000; }
+
+#tab_t .act1 {
+  background-color: #3a3a3a; }
+  #tab_t .act1 h5 {
+    color: #fff; }
+    #tab_t .act1 h5 a {
+      color: #fff; }
+
+#tab_t .act2 {
+  background-color: #FF88AE; }
+  #tab_t .act2 h5 {
+    color: #fff; }
+    #tab_t .act2 h5 a {
+      color: #fff; }
+
+#tab_t .act3 {
+  background-color: #7BD3F9; }
+  #tab_t .act3 h5 {
+    color: #fff; }
+    #tab_t .act3 h5 a {
+      color: #fff; }
+
+#tab_t .act4 {
+  background-color: #5E4B3C; }
+  #tab_t .act4 h5 {
+    color: #fff; }
+    #tab_t .act4 h5 a {
+      color: #fff; }
 
 header #logo {
   width: 340px;
@@ -264,7 +283,7 @@ header .header-r .search [type="text"] {
   color: #999;
   padding-left: 8px; }
 
-header .header-r .search [type="submit"] {
+header .header-r .search [type="button"] {
   width: 71px;
   height: 28px;
   float: right;
@@ -313,6 +332,9 @@ header .header-r .hot {
 header .header-r .hot a {
   margin-right: 18px; }
 
+header .header-r .hot a:hover {
+  color: #f00; }
+
 #nav {
   background-color: #3a3a3a;
   height: 40px;
@@ -335,6 +357,18 @@ header .header-r .hot a {
 #nav .nav-ul li:hover a {
   padding-bottom: 3px;
   border-bottom: 2px solid #fff; }
+
+#nav.hide1 {
+  background-color: #3a3a3a; }
+
+#nav.hide2 {
+  background-color: #FF88AE; }
+
+#nav.hide3 {
+  background-color: #7BD3F9; }
+
+#nav.hide4 {
+  background-color: #5E4B3C; }
 
 #banner {
   height: 504px; }
@@ -1039,9 +1073,6 @@ header .header-r .hot a {
 #indexfoot .item i {
   color: #999; }
 
-#indexfoot .item i.te {
-  color: #fff; }
-
 #indexfoot .indexfoot-c {
   float: left;
   width: 370px;
@@ -1114,7 +1145,7 @@ footer #footer-t .left {
 
 footer #footer-t .left .iconfont {
   color: #fff;
-  margin-right: 5px; }
+  margin-right: 4px; }
 
 footer #footer-t .left .red {
   font: 700 12px/30px "";
