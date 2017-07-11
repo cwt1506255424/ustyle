@@ -7,13 +7,18 @@
 <link href="../css/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+<div class="code-down-box">
+	<div class="code-img"></div>
+	<h5 class="code-title">下载手机客户端</h5>
+	<i class="icon-del">×</i>
+</div>
 <section id="top">
 	<div class="margin clear">
     	<div class="top-l">
         	<i class="iconfont">&#xe623;</i>
             <a href="#" class="linkone">YOHO!BUY 有货</a>
             	<ul class="group-list">
-                	<li><a href="#" onmouseover="javascript:this.innerHTML='集团官网'" onmouseout="javascript:this.innerHTML='YOHO!'">YOHO!</a></li>
+                	<li><a href="YOHO!.html" onmouseover="javascript:this.innerHTML='集团官网'" onmouseout="javascript:this.innerHTML='YOHO!'">YOHO!</a></li>
 					<li><a href="#" onmouseover="javascript:this.innerHTML='男生潮流'" onmouseout="javascript:this.innerHTML='YOHO!BOYS'">YOHO!BOYS</a></li>
 					<li><a href="#" onmouseover="javascript:this.innerHTML='女生潮流'" onmouseout="javascript:this.innerHTML='YOHO!GIRLS'">YOHO!GIRLS</a></li>
 					<li><a href="#" onmouseover="javascript:this.innerHTML='物趣分享'" onmouseout="javascript:this.innerHTML='YOHO!SHOW'">YOHO!SHOW</a></li>
@@ -31,7 +36,7 @@
 					</div>
 					<div id="loginBoxHide">
 						<span>Hi~&nbsp;</span><a class="userName" style="color:#000"></a>
-						[&nbsp;<a href="denglu.html">退出</a>&nbsp;]
+						[&nbsp;<a id="tuichu" href="#">退出</a>&nbsp;]
 					</div>
 				</li>
                 <li class="changeBg"><a href="#">MY有货
@@ -64,20 +69,21 @@
 <header>
 	<div class="margin clear">
         <div class="header-l">
-           <ul>
-           		<li><h5 class="name-c"><a href="#">男生</a></h5><h5><a href="#">BOYS</a></h5></li>
-            	<li><h5 class="name-c"><a href="#">女生</a></h5><h5><a href="#">GIRLS</a></h5></li>
-            	<li><h5 class="name-c"><a href="#">潮童</a></h5><h5><a href="#">KIDS</a></h5></li>
-           		<li><h5 class="name-c"><a href="#">创意生活</a></h5><h5><a href="#">LIFE STRLE</a></h5></li>
+		  <ul id="tab_t">
+           		<li onclick="xuanze(1)" class="act1"><h5 class="name-c"><a href="#">男生</a></h5><h5><a href="#">BOYS</a></h5></li>
+            	<li onclick="xuanze(2)" class=""><h5 class="name-c"><a href="#">女生</a></h5><h5><a href="#">GIRLS</a></h5></li>
+            	<li onclick="xuanze(3)" class=""><h5 class="name-c"><a href="#">潮童</a></h5><h5><a href="#">KIDS</a></h5></li>
+           		<li onclick="xuanze(4)" class=""><h5 class="name-c"><a href="#">创意生活</a></h5><h5><a href="#">LIFE STRLE</a></h5></li>
            </ul>
        </div>
        <div id="logo">
-       		<a href="#" class="logo"><img id="img01" src="../images/logo-en.png" /></a>
+       		<a href="index.html" class="logo"><img id="img01" src="../images/logo-en.png" /></a>
        </div>
        <div class="header-r">
 			<div class="search clear">
                 <input type="text" placeholder="MASNESS" />
-                <input type="submit" value=" " />
+                <input type="button" value=" " onclick="javascript:location.href='shangpinliebiao.html'"  />
+               
             </div>	
             <a href="#">
             	<i class="iconfont shopping">&#xe64d;&nbsp;
@@ -704,7 +710,7 @@
 </section>
 
 <section id="loading" class="margin">
-   <a href="#" class="load">查看更多</a>
+   <a href="shangpinliebiao.html"  class="load">查看更多</a>
 </section>
 <section id="indexfoot">
 	<div class="margin clear">
@@ -734,7 +740,7 @@
             <div><a href="#" class="button">我要参与</a></div>
             <p class="item">
             	<i class="iconfont">&#xe64c;</i>
-                <i class="iconfont te">&#xe64c;</i>
+               
             </p>
         </div>
         <div class="indexfoot-r">
@@ -745,7 +751,7 @@
             </div>
             <ul class="mobile">
             	<li><a href="#"><img src="../images/index4.png"/></a></li>
-                <li><a href="#"><img src="../images/index5.png"/></a></li>
+                <li><a href="yohomars.html"><img src="../images/index5.png"/></a></li>
                 <li><a href="#"><img src="../images/index6.png"/></a></li>
             </ul>
             <p class="item">
@@ -780,7 +786,7 @@
             </li>
         	<li>
             	<p><span>会员中心</span></p>
-                <p><a href="#">会员制度</a></p>
+                <p><a href="gonggao.html">有货公告</a></p>
                 <p><a href="#">会员优惠</a></p>
                 <p><a href="#">账户管理</a></p>
                 <p><a href="#">密码管理</a></p>
@@ -853,17 +859,42 @@
 <script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
 <script type="text/javascript" src="../js/cookieTools.js" ></script>
 <script type="text/javascript">
+
+function xuanze(data){
+	var liaar=document.getElementById("tab_t").children;//取得所有li元素，也就是取得所有选项卡
+	for(var i=0;i<liaar.length;i++){//遍历所有li元素
+		liaar[i].className="";//把所有选项卡样式清除
+	}
+	liaar[data-1].className="act"+data;
+	var tab_c=document.getElementById("nav");
+	tab_c.className="hide"+data;
+}
+
 var jq = $.noConflict(); 
+
 jq(function(){
 	var userName=getCookie("userName");
-	if(userName!=""){
-		jq("#loginBoxShow").toggle();
-		jq(".userName").html(userName);
+	if(userName==""){
+		jq("#loginBoxHide").css("display","none");
+		jq("#loginBoxShow").css("display","block");	
 	}else{
-		jq("#loginBoxHide").toggle();
+		jq("#loginBoxShow").css("display","none");
+		jq(".userName").html(userName);		
 	}
+	
+//点击退出，清除cookie
+	jq("#tuichu").click(function(){
+		removeCookie("userName");
+		jq("#loginBoxHide").css("display","none");
+		jq("#loginBoxShow").css("display","block");
+	})
+
 })
 
+//关闭亦凡
+	jq(".icon-del").click(function(){
+		jq(".code-down-box").toggle();
+	})
 //logo换图
 jq(function(){
 	jq("#logo").mouseenter(function(){
@@ -985,7 +1016,7 @@ jq(".third-nav-wrapper").on("mouseenter", function() {
 jq(".third-nav-wrapper").on("mouseleave", function() {
                 jq(this).hide();
             });
-function show() {
+function show(){
 	var mytop =jq(document).scrollTop();
 	if (mytop>300){
 		jq("#show").css({'display':'block'});

@@ -9,12 +9,12 @@
 <body>
 <header>
 	<div class="header-inner clear">
-    	<h2 class="logo"><a href="#"><img src="../images/logo-en.png"/></a></h2>
+    	<h2 class="logo"><a href="index.html"><img src="../images/logo-en.png"/></a></h2>
         <ul class="header-tool">
-            <li><span>Hi~</span><a href="#">[请登录]</a><a href="#">[免费注册]</a></li>
-            <li class="has"><span><a href="#">MY有货</a><img class="san" src="../images/sanjiao.png"/>
+            <li><span>Hi~</span><a href="denglu.html">[请登录]</a><a href="zhuce.html">[免费注册]</a></li>
+            <li class="has"><span><a href="denglu.html">MY有货</a><img class="san" src="../images/sanjiao.png"/>
             <div id="hasTool" class="tool-select">
-            	<a href="#">我的收藏</a><a href="#">优惠券</a>
+            	<a href="denglu.html">我的收藏</a><a href="denglu.html">优惠券</a>
             </div>
             </li>
             
@@ -99,8 +99,7 @@
 				</li>
 				<li class="relative yincang">
 					<input id="password" class="input" type="password" maxlength="20" placeholder="密码"/>
-					
-					<span id="caps-lock" class="caps-lock">大写状态开启</span>
+				
 				</li>               
                 <li id="ph" class="ph">
                 	<input id="phone" class="input1" value="" placeholder="手机号码" type="text"  />
@@ -476,9 +475,7 @@ window.onload=function(){
 			upws=item[1];
 		}
 	}
-	/*if(uname && upws){//用户名密码不为空
-		window.location.href="../index.html";
-	}*/
+
 
 }
 
@@ -494,7 +491,7 @@ jq("#btnLogin").click(function(){
 		success:function(data){
 			if(data=="1"){
 				//保存cookie
-				saveCookie("userName",jq('#userId').val(),7);
+				setCookie("userName",jq('#userId').val(),7);
 				console.log(getCookie("userName"));
 				
 				location.href="index.html";

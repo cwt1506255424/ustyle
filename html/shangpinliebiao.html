@@ -7,6 +7,11 @@
 <link href="../css/shangpinliebiao.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+<div class="code-down-box">
+	<div class="code-img"></div>
+	<h5 class="code-title">下载手机客户端</h5>
+	<i class="icon-del">×</i>
+</div>
 <section id="top">
 	<div class="margin clear">
     	<div class="top-l">
@@ -25,7 +30,16 @@
         </div>
         <div class="top-r">
         	<ul>
-            	<li class="te"><span>Hi~[&nbsp;</span><a href="../html/denglu.html">请登录<span>&nbsp;]</span></a><a href="../html/zhuce.html" class="te"><span>[&nbsp;</span>免费注册<span>&nbsp;]</span></a></li>
+            	<li class="te">
+					<div id="loginBoxShow">
+						<span>Hi~[&nbsp;</span><a href="denglu.html">请登录<span>&nbsp;]</span></a><a href="zhuce.html" class="te"><span>[&nbsp;</span>免费注册<span>&nbsp;]</span></a>
+					</div>
+					<div id="loginBoxHide">
+						<span>Hi~&nbsp;</span><a class="userName" style="color:#000"></a>
+						[&nbsp;<a id="tuichu" href="denglu.html">退出</a>&nbsp;]
+					</div>
+				</li>           	
+            	
                 <li class="changeBg"><a href="#">MY有货
                 	<i class="iconfont"><img src="../images/xiajiantou.png"/></i></a>
                 </li>
@@ -56,11 +70,11 @@
 <header>
 	<div class="margin clear">
         <div class="header-l">
-           <ul>
-           		<li><h5 class="name-c"><a href="#">男生</a></h5><h5><a href="#">BOYS</a></h5></li>
-            	<li><h5 class="name-c"><a href="#">女生</a></h5><h5><a href="#">GIRLS</a></h5></li>
-            	<li><h5 class="name-c"><a href="#">潮童</a></h5><h5><a href="#">KIDS</a></h5></li>
-           		<li><h5 class="name-c"><a href="#">创意生活</a></h5><h5><a href="#">LIFE STRLE</a></h5></li>
+		  <ul id="tab_t">
+           		<li onclick="xuanze(1)" class="act1"><h5 class="name-c"><a href="#">男生</a></h5><h5><a href="#">BOYS</a></h5></li>
+            	<li onclick="xuanze(2)" class=""><h5 class="name-c"><a href="#">女生</a></h5><h5><a href="#">GIRLS</a></h5></li>
+            	<li onclick="xuanze(3)" class=""><h5 class="name-c"><a href="#">潮童</a></h5><h5><a href="#">KIDS</a></h5></li>
+           		<li onclick="xuanze(4)" class=""><h5 class="name-c"><a href="#">创意生活</a></h5><h5><a href="#">LIFE STRLE</a></h5></li>
            </ul>
        </div>
        <div id="logo">
@@ -246,40 +260,109 @@
 				<h2><a href="#">全部品类</a></h2>
 			</li>
 			<li class="listNav">
-				<h3>
-					<img src="../images/navl.png"/>
-					<a href="#">上衣</a>
+				<h3 class="menu_head">
+					<i class="jiantou"></i><i class="xiajiantou" style="display:none;"></i>
+					<a href="#" >上衣</a>
 				</h3>
+				<ul class="sort-child-list" style="display: none;">
+					<li><a>全部上衣</a></li>
+					<li><a>T恤</a></li>
+					<li><a>POLO</a></li>
+					<li><a>背心</a></li>
+					<li><a>衬衫</a></li>
+					<li><a>卫衣</a></li>
+					<li><a>夹克</a></li>
+					<li><a>防风外套</a></li>
+					<li><a>皮衣</a></li>
+					<li><a>风衣</a></li>
+					<li><a>西装</a></li>
+					<li><a>马甲</a></li>
+					<li><a>套装</a></li>
+				</ul>
 			</li>
 			<li class="listNav">
-				<h3>
-					<img src="../images/navl.png"/>
-					<a href="#">裤装</a>
+				<h3 class="menu_head">
+					<i class="jiantou"></i><i class="xiajiantou" style="display:none;"></i>
+					<a href="#" >裤装</a>
 				</h3>
+				<ul class="sort-child-list" style="display: none;">
+					<li><a>全部裤装</a></li>
+					<li><a>短裤</a></li>
+					<li><a>休闲裤</a></li>
+					<li><a>牛仔裤</a></li>
+					<li><a>运动裤</a></li>
+					<li><a>西裤</a></li>
+					<li><a>打底/紧身裤</a></li>
+				</ul>
 			</li>
 			<li class="listNav">
-				<h3>
-					<img src="../images/navl.png"/>
-					<a href="#">鞋靴</a>
+				<h3 class="menu_head">
+					<i class="jiantou"></i><i class="xiajiantou" style="display:none;"></i>
+					<a href="#" >鞋靴</a>
 				</h3>
+				<ul class="sort-child-list" style="display: none;">
+					<li><a>全部鞋靴</a></li>
+					<li><a>休闲/运动鞋</a></li>
+					<li><a>凉鞋/凉拖</a></li>
+					<li><a>时装鞋</a></li>
+					<li><a>保养护理</a></li>
+					<li><a>靴子</a></li>
+				</ul>
 			</li>
 			<li class="listNav">
-				<h3>
-					<img src="../images/navl.png"/>
-					<a href="#">包类</a>
+				<h3 class="menu_head">
+					<i class="jiantou"></i><i class="xiajiantou" style="display:none;"></i>
+					<a href="#" >包类</a>
 				</h3>
+				<ul class="sort-child-list" style="display: none;">
+					<li><a>全部包类</a></li>
+					<li><a>双肩包</a></li>
+					<li><a>手拎/单肩包</a></li>
+					<li><a>钱包/卡包</a></li>
+					<li><a>腰包</a></li>
+					<li><a>邮差包</a></li>
+					<li><a>电脑包</a></li>
+					<li><a>储物包</a></li>
+					<li><a>环保包</a></li>
+					<li><a>包配</a></li>
+					<li><a>tote包</a></li>
+					<li><a>旅行包</a></li>
+					<li><a>旅行箱</a></li>
+					<li><a>手包/钥匙包</a></li>
+				</ul>	
 			</li>
 			<li class="listNav">
-				<h3>
-					<img src="../images/navl.png"/>
-					<a href="#">服配</a>
+				<h3 class="menu_head">
+					<i class="jiantou"></i><i class="xiajiantou" style="display:none;"></i>
+					<a href="#" >服配</a>
 				</h3>
+				<ul class="sort-child-list" style="display: none;">
+					<li><a>全部服配</a></li>
+					<li><a>首饰</a></li>
+					<li><a>帽子</a></li>
+					<li><a>手表</a></li>
+					<li><a>太阳镜/眼镜</a></li>
+					<li><a>配饰</a></li>
+					<li><a>皮带</a></li>
+					<li><a>围巾</a></li>
+					<li><a>袜子</a></li>
+					<li><a>手帕</a></li>
+					<li><a>手套</a></li>
+					<li><a>披肩</a></li>
+				</ul>
 			</li>
 			<li class="listNav">
-				<h3>
-					<img src="../images/navl.png"/>
-					<a href="#">美妆/个护</a>
+				<h3 class="menu_head">
+					<i class="jiantou"></i><i class="xiajiantou" style="display:none;"></i>
+					<a href="#" >美妆/个护</a>
 				</h3>
+				<ul class="sort-child-list" style="display: none;">
+					<li><a>全部美妆/个护</a></li>
+					<li><a>面部护理</a></li>
+					<li><a>身体护理</a></li>
+					<li><a>香水彩妆</a></li>
+					<li><a>口腔护理</a></li>
+				</ul>
 			</li>
 
 		</ul>
@@ -378,7 +461,7 @@
 			</p>
 		</div>
 	</div>
-	<ul class="goods-container clear">
+	<ul id="listgoodsId" class="goods-container clear">
 		<li class="good-info">
 			<div class="good-detail-img">
 				<a class="good-thumb"><img class="lazy" src="../images/list1.jpg"/></a>
@@ -394,14 +477,14 @@
 		</li>
 		<li class="good-info">
 			<div class="good-detail-img">
-				<a class="good-thumb"><img class="lazy" src="../images/list2.jpg"/></a>
+				<a class="good-thumb" href="shangpinxiangqing.html"><img class="lazy" src="../images/list8.jpg"/></a>
 			</div>
-			<div class="good-detail-text">
-				<a class="">BABAMA 羽毛吊坠</a>
-				<p class="brand"><a>BABAMA</a></p>
+			<div class="good-detail-text" href="shangpinxiangqing.html">
+				<a href="shangpinxiangqing.html">RASEN family Icon++乐活魔方 绿色</a>
+				<p class="brand"><a>RASEN family</a></p>
 				<p class="price ">
-					<span class="market-price">￥1078.00</span>
-					<span class="sale-price">￥259.00</span>
+					<span class="market-price">￥123.00</span>
+					<span class="sale-price">￥248.00</span>
 				</p>
 			</div>
 		</li>
@@ -539,32 +622,79 @@
 <script type="text/javascript" src="../js/tools.js"></script>
 <script type="text/javascript" src="../js/move.js"></script>
 <script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="../js/cookieTools.js" ></script>
 <script type="text/javascript">
+function xuanze(data){
+	var liaar=document.getElementById("tab_t").children;//取得所有li元素，也就是取得所有选项卡
+	for(var i=0;i<liaar.length;i++){//遍历所有li元素
+		liaar[i].className="";//把所有选项卡样式清除
+	}
+	liaar[data-1].className="act"+data;
+	var tab_c=document.getElementById("nav");
+	tab_c.className="hide"+data;
+}
+
 
 
 var jq = $.noConflict();
+//动态生成商品列表
+//动态生成商品详情
 jq(function(){
 	jq.ajax({
 		url:"../php/getGoodsList.php",
 		type:"get",
 		success:function(data){
 		var obj=eval(data);
-		for(var i=0;i<24;i++){
-			let goodsName=obj[i].goodsName;
-			let goodsType=obj[i].goodsType;
-			let goodsPrice=obj[i].goodsPrice;
-			let goodsImg=obj[i].goodsImg;
-			let goodsDesc=obj[i].goodsDesc;
-            let beiyong1=obj[i].beiyong1;
-			let str='<li class="good-info"><div class="good-detail-img"><a class="good-thumb"><img class="lazy" src="'+obj[i].goodsImg+'"/></a></div><div class="good-detail-text"><a>'+obj[i].goodsName+'</a><p class="brand"><a>'+obj[i].goodsDesc+'</a></p><p class="price "><span class="market-price">￥'+obj[i].beiyong1+'</span><span class="sale-price">￥'+obj[i].goodsPrice+'</span></p></div></li>';
-			jq(".goods-container").append(str);
-		}
+		for(var i=0;i<obj.length;i++){
+				let goodsName=obj[i].goodsName;
+				let goodsType=obj[i].goodsType;
+				let goodsPrice=obj[i].goodsPrice;
+				let goodsImg=obj[i].goodsImg;
+				let goodsDesc=obj[i].goodsDesc;
+	            let beiyong1=obj[i].beiyong1;
+				let str='<li class="good-info"><div class="good-detail-img"><a class="good-thumb"><img class="lazy" src="'+obj[i].goodsImg+'"/></a></div><div class="good-detail-text"><a>'+obj[i].goodsName+'</a><p class="brand"><a>'+obj[i].goodsDesc+'</a></p><p class="price "><span class="market-price">￥'+obj[i].beiyong1+'</span><span class="sale-price">￥'+obj[i].goodsPrice+'</span></p></div></li>';
+				jq(".goods-container").append(str);
+			}
+		jq("#listgoodsId li").on("click",function(){
+			let number=jq(this).attr("ord");
+			setCookie("number",number,7);
+			window.location.href="shangpinxiangqing.html";				
+		});
+		
 		}
 	});
 })
 
+jq(document).ready(function(){
+	jq(".menu_head").click(function(){
+		jq(".menu_head i:first-child").toggle();
+		jq(".menu_head i:nth-child(2)").toggle();
+		jq(this).next(".sort-child-list").slideToggle(300).siblings(".sort-child-list").slideUp("slow");
+ 	});
+});
 
+jq(function(){
+	var userName=getCookie("userName");
+	if(userName==""){
+		jq("#loginBoxHide").css("display","none");
+		jq("#loginBoxShow").css("display","block");	
+	}else{
+		jq("#loginBoxShow").css("display","none");
+		jq(".userName").html(userName);		
+	}
+	
+//点击退出，清除cookie
+	jq("#tuichu").click(function(){
+		removeCookie("userName");
+		jq("#loginBoxHide").css("display","none");
+		jq("#loginBoxShow").css("display","block");
+	})
 
+})
+//关闭亦凡
+	jq(".icon-del").click(function(){
+		jq(".code-down-box").toggle();
+	})
 //logo换图
 jq(function(){
 	jq("#logo").mouseenter(function(){

@@ -70,7 +70,7 @@
 		</div>
 		<div class="cart-table">
 			<ul class="table-group">
-				<li class="sellItem clear">
+				<li id="sellItem" class="sellItem clear">
 					<div class="pay-pro" style="width:368px;">
 						<i class="cart-item-checked"><img src="../images/weixuan2.png"/></i>
 						<a href="#" class="payGoods"><img src="../images/shiulian.jpg"/></a>
@@ -83,17 +83,17 @@
 							</em>
 						</p>	
 					</div>
-					<div class="product-price" style="width:148px;">¥45.00</div>
+					<div id="price" class="product-price" style="width:148px;">45.00元</div>
 					<div class="adjust-cart-num" style="width:128px;">
 						<div class="cart-num-cont">
-							<span class="minus btn">-</span>
-							<input type="text" value=1 />
-							<span class="add btn">+</span>
+							<span id="minus" class="minus btn">-</span>
+							<input type="text" value=1 id="num"/>
+							<span id="add" class="add btn">+</span>
 						</div>
 					</div>
-					<div class="sub-total" style="width:160px;">¥45.00</div>
+					<div id="sum" class="sub-total" style="width:160px;">45.00元</div>
 					<div class="cart-operation" style="width:100px;">
-						<span class="cart-del-btn">删除</span>
+						<span id="del" class="cart-del-btn">删除</span>
 						<span class="cart-col-btn">移入收藏</span>
 					</div>
 				</li>
@@ -122,13 +122,6 @@
 	</div>
 	
 
-
-
-	<div class=""></div>
-	<div class=""></div>
-	<div class=""></div>
-	<div class=""></div>
-	<div class=""></div>
 	
 </section>
 <footer>
@@ -232,248 +225,38 @@
 <script type="text/javascript" src="../js/tools.js"></script>
 <script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
 <script type="text/javascript">
-function changeyzm(){
-	var i=0;
-	var str="";
-	while(i<4){
-		var num1=parseInt(Math.random()*123);
-		if((num1>=48 && num1<=57)||(num1>=65 && num1<=90)||(num1>=97 && num1<=122)){
-			str+=String.fromCharCode(num1);
-			i++;
-		}
-	}
-	$("span").innerHTML=str;	
-}
-//改变验证码
-function reImg(){
-	var img = document.getElementsByClassName("img-check-pic");
-	for(var i=0;i<img.length;i++){
-		var num=parseInt(Math.random()*4)*60;
-		console.log(num);
-		img[i].style.cssText="background-position-x:-"+num+"px;background-position-y:-"+num+"px;"; 
-	} 
-}
-var ord=0;
-function changePosition(event){
-	var e=event||window.event;
-	console.log(e.target);
-	ord+=60;
-	if(ord>180){
-		ord=0;
-	}
-	e.target.style.backgroundPositionX=-ord+"px";
-}
-function changePosition(event){
-	var e=event||window.event;
-	console.log(e.target);
-	ord+=60;
-	if(ord>180){
-		ord=0;
-	}
-	e.target.style.backgroundPositionX=-ord+"px";
-}
-function changePosition(event){
-	var e=event||window.event;
-	console.log(e.target);
-	ord+=60;
-	if(ord>180){
-		ord=0;
-	}
-	e.target.style.backgroundPositionX=-ord+"px";
-}
-function changePosition(event){
-	var e=event||window.event;
-	console.log(e.target);
-	ord+=60;
-	if(ord>180){
-		ord=0;
-	}
-	e.target.style.backgroundPositionX=-ord+"px";
-}
-function changeyzm(){
-	var imgs=document.getElementById("img-check-pics");
-	var po0x=parseInt(imgs.children[0].style.backgroundPositionX);
-	var po0y=parseInt(imgs.children[0].style.backgroundPositionY);
-	var po1x=parseInt(imgs.children[1].style.backgroundPositionX);
-	var po1y=parseInt(imgs.children[1].style.backgroundPositionY);
-	var po2x=parseInt(imgs.children[2].style.backgroundPositionX);
-	var po2y=parseInt(imgs.children[2].style.backgroundPositionY);
-	var po3x=parseInt(imgs.children[3].style.backgroundPositionX);
-	var po3y=parseInt(imgs.children[3].style.backgroundPositionY);
-	if(po0x==-60&&po0y==0){
-		if(po1x==-180&&po1y==-60){
-			if(po2x==-120&&po2y==-120){
-				if(po3x==0&&po3y==-180){
-					var i=0;
-					var str="";
-					while(i<4){
-						var num1=parseInt(Math.random()*123);
-						if((num1>=48 && num1<=57)||(num1>=65 && num1<=90)||(num1>=97 && num1<=122)){
-							str+=String.fromCharCode(num1);
-							i++;
-						}
-					}
-					$("span").innerHTML=str;
-					$("img-check-tip").innerHTML="";	
-				}
-			}
-		}			
-	}else{
-		$("img-check-tip").innerHTML="请将图形验证码翻转至正确方向";	
-	}
-	
-}
-//引入类库，使用类库中的正则封装函数验证表单 
+
 window.onload=function(){
-	$("putongdenglu").onclick=function(){
-		$("putongdenglu").style.cssText="background-image:url(../images/sprite.passport.png);background-position:-311px -29px;color:#fff;";
-		//$("shoujiyanzheng").style.cssText="background-image:url(../images/sprite.passport.png);background-position:-311px 0px;color:#000;";
-		$("shoujiyanzheng").style.cssText="background-image:none";
+	var price=parseInt($("price").innerHTML);
+	var num=parseInt($("num").value);
+	var sum;
+	//添加
+	$("add").onclick=function(){
+		num++;
+		sum=price*num;
+		$("num").value=num;
+		$("sum").innerHTML=sum+".00元";
 	}
-	$("shoujiyanzheng").onclick=function(){
-		$("shoujiyanzheng").style.cssText="background-image:url(../images/sprite.passport.png);background-position:-311px -29px;color:#fff;";
-		$("putongdenglu").style.cssText="background-image:url(../images/sprite.passport.png);background-position:-311px 0px;color:#000;";
-	}
-	$("phone").onblur=function(){//失去光标事件	
-		var phone=$("phone").value;
-		var phonetishi=checkAll("Phone",phone);
-		if(phone==""){
-			$("err-tip").style.cssText="display:block;top:210px;left:775.5px;";
-			$("tips").innerHTML="请输入手机号码";
-			return false;
-		}else{
-			$("err-tip").style.cssText="display:none";
-			$("tips").innerHTML="";
+	//减少
+	$("minus").onclick=function(){
+		num--;
+		if(num<=1){
+			num=1;
 		}
-		if(!phonetishi){
-			$("err-tip").style.cssText="display:block;top:210px;left:775.5px;";
-			$("tips").innerHTML="手机号码格式不正确,请重新输入";
-			$("phone").style.cssText="border-color:red";
-			return false;
-		}else{
-			$("tips").innerHTML="";
-			$("err-tip").style.cssText="display:none";
-			$("phone").style.cssText="border-color:#dbdbdb;";
-		}
-	}
-
-	$("message").onblur=function(){//验证码只能是4位数字字母			
-		var message=$("message").value;
-		var span=$("span").innerHTML;
-		showCode=message.toLowerCase();//全部转小写
-		span=span.toLowerCase();
-		var showCodetishi=checkAll("showCode",message);
-		if(message==""){
-			$("err-tip").style.cssText="display:block;top:392px;left:716.5px;";
-			$("tips1").innerHTML="请输入验证码";
-			return false;
-		}else{
-			$("err-tip").style.cssText="display:none";
-			$("tips1").innerHTML="";
-			$("message").style.cssText="border-color:#dbdbdb";
-		}
-		if(!showCodetishi){
-			$("err-tip").style.cssText="display:block;top:392px;left:716.5px;";
-			$("tips1").innerHTML="短信验证码错误";
-			$("message").style.cssText="border-color:red";
-			return false;
-		}else if(span!=showCode){
-			$("err-tip").style.cssText="display:block;top:392px;left:716.5px;";
-			$("tips1").innerHTML="验证码错误";
-			$("message").style.cssText="border-color:red";
-		}else{
-
-			$("err-tip").style.cssText="display:block;top:392px;left:716.5px;";
-			$("tips1").innerHTML="通过验证";
-			$("message").style.cssText="border-color:#dbdbdb;";			
-		}	
-	}
-
-	$("account1").onblur=function(){//失去光标事件	
-		var email=$("account1").value;
-		var emailtishi=checkAll("email",email);
-		if(email==""){
-			$("err-tip").style.cssText="display:block;top:8px;left:285px;";
-			$("err-tip").innerHTML="请输入邮箱";
-			return false;
-		}else{
-			$("err-tip").innerHTML="";
-		}
-		if(!emailtishi){
-			$("err-tip").style.cssText="display:block;top:0px;left:285px;";
-			$("err-tip").innerHTML="邮箱格式不正确，请重新输入";
-			$("account1").style.cssText="border-color:red";
-			return false;
-		}else{
-			$("err-tip").innerHTML="";
-			$("account1").style.cssText="border-color:#dbdbdb;";
-		}
-	}
-	$("password").onblur=function(){//失去光标事件	
-		var password=$("password").value;
-		var pwdtishi=checkAll("password",password);
-		if(password==""){
-			$("err-tip").style.cssText="display:block;top:70px;left:285px;";
-			$("err-tip").innerHTML="请输入密码";
-			return false;
-		}else{
-			$("err-tip").innerHTML="请输入长度为6-20字符的密码";
-		}
-		if(!pwdtishi){
-			$("err-tip").style.cssText="display:block;top:70px;left:285px;";
-			$("err-tip").innerHTML="密码格式不正确，请重新输入";
-			$("password").style.cssText="border-color:red";
-			return false;
-		}else{
-			$("err-tip").innerHTML="";
-			$("password").style.cssText="border-color:#dbdbdb;";
-		}
+		sum=price*num;
+		$("num").value=num;
+		$("sum").innerHTML=sum+".00元";
 	}
 	
+	$("del").onclick=function(){
+		$("sellItem").style.cssText="display:none;";
+	}
 }
 
 
 var jq = $.noConflict();
-//国家码显示
-jq(function(){	
-	jq("#guojia").click(function(){
-		jq(".country-list").toggle(300);
-	});
-});
-//国家码选择
-	jq("#country-list").delegate("li","click",function(){
-		jq("#guojia")[0].innerHTML=this.innerHTML;
-		jq("#country-list").toggle(500);
-	});
-//显示/隐藏密码登录
-jq(function(){	
-	jq("#device").click(function(){
-		jq(".mobile-login").toggle();
-		jq("#device-tip1").toggle();
-		jq(".desktop-login").toggle();
-		jq("#device-tip2").toggle();
-	});
-});
 
-//点击普通登录，普通登录显示
-jq("#putongdenglu").on("click", function() {
-	jq('.yincang').show();
-	jq('#ph').hide();
-	jq('#check').hide();
-	jq('#yanzhengCode').hide();
-	
-})
 
-//点击手机验证，显示手机验证
-jq("#shoujiyanzheng").on("click", function(){
-	jq('#ph').show();
-	jq('#check').show();
-	jq('#yanzhengCode').show();
-	jq('.yincang').hide();
-	
-})
-
- 
 //MY有货下拉菜单显示
 jq(".has").on("mouseenter", function() {
                 jq('#hasTool').show();

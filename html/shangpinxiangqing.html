@@ -7,6 +7,11 @@
 <link href="../css/shangpinxiangqing.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+<div class="code-down-box">
+	<div class="code-img"></div>
+	<h5 class="code-title">下载手机客户端</h5>
+	<i class="icon-del">×</i>
+</div>
 <section id="top">
 	<div class="margin clear">
     	<div class="top-l">
@@ -25,7 +30,15 @@
         </div>
         <div class="top-r">
         	<ul>
-            	<li class="te"><span>Hi~[&nbsp;</span><a href="../html/denglu.html">请登录<span>&nbsp;]</span></a><a href="../html/zhuce.html" class="te"><span>[&nbsp;</span>免费注册<span>&nbsp;]</span></a></li>
+            	<li class="te">
+					<div id="loginBoxShow">
+						<span>Hi~[&nbsp;</span><a href="denglu.html">请登录<span>&nbsp;]</span></a><a href="zhuce.html" class="te"><span>[&nbsp;</span>免费注册<span>&nbsp;]</span></a>
+					</div>
+					<div id="loginBoxHide">
+						<span>Hi~&nbsp;</span><a class="userName" style="color:#000"></a>
+						[&nbsp;<a id="tuichu" href="denglu.html">退出</a>&nbsp;]
+					</div>
+				</li>            	
                 <li class="changeBg"><a href="#">MY有货
                 	<i class="iconfont"><img src="../images/xiajiantou.png"/></i></a>
                 </li>
@@ -78,7 +91,7 @@
                             <h3>您的购物车暂无商品</h3>
                         </div>
                     </div>
-                   
+                <i id="shopCar"></i>  
                 </i>
             </a> 
             <div class="hot">
@@ -254,32 +267,36 @@
 		&gt;
 		<a herf="#" class="last">RASEN family Icon++ 心动魔方 水粉蓝</a>
 	</p>
-	<div class="main clear margin">
-		<div class="main-l">
-			<div class="main-l-img">
-				<div id="min-img" class="zoomMiddle">
-					<img src="../images/img011.jpg"/>
-					<div class="mask"></div>
+	<div class="main clear margin">	
+		<div class="main-l zoom clear">
+			<div class="zoomMiddle">
+				<img src="../images/img011.jpg" alt="">
+				<div class="mask"></div>
+			</div>
+			<div class="zoomSmall">
+				<div  class="wrapSmallImg">
+					<ul class="thumbs">
+						<li class="current thumb-wrap">
+							<img src="../images/img011.jpg" alt="" style="z-index: 1000;">
+							<div id="thumb-wrap" >1</div>
+						</li>
+						<li><img src="../images/tao1.jpg" alt=""></li>
+						<li><img src="../images/boy1.jpg" alt=""></li>
+					</ul>
 				</div>
-				<div class="zoomLarge" style="z-index:1000"><img src="../images/img6.jpg" /></div>
-				
-				<div class="share-row">
-					<span class="title">分享：</span>
-					<span class="share-wrapper">
-						<i class="weibo" title="分享到新浪微博"></i>
-						<i class="weixin" title="分享到微信朋友圈"></i>
-						<i class="tweibo" title="分享到腾讯微博"></i>
-						<i class="qzone" title="分享到QQ空间"></i>
-						<i class="qq" title="分享到QQ好友"></i>
-						<i class="renren" title="分享到人人"></i>
-						<i class="douban" title="分享到豆瓣"></i>
-					</span>
-				</div>
-			</div>	
-		</div>
-		<div id="thumbs" class="thumbs">
-			<div class="thumb-wrap">
-				<img src="../images/img2.jpg"/>
+			</div>
+			<div class="zoomLarge" style="z-index:1000" ><img src="../images/img011.jpg" alt=""></div>
+			<div class="share-row">
+				<span class="title">分享：</span>
+				<span class="share-wrapper">
+					<i class="weibo" title="分享到新浪微博"></i>
+					<i class="weixin" title="分享到微信朋友圈"></i>
+					<i class="tweibo" title="分享到腾讯微博"></i>
+					<i class="qzone" title="分享到QQ空间"></i>
+					<i class="qq" title="分享到QQ好友"></i>
+					<i class="renren" title="分享到人人"></i>
+					<i class="douban" title="分享到豆瓣"></i>
+				</span>
 			</div>
 		</div>
 		<div class="main-r">
@@ -375,27 +392,39 @@
 							<span class="minus-plus l">
 								<i id="minus-num" class="minus">-</i>
 							</span>
-							<span id="num" class="num l">4</span>
+							<span id="num" class="num l">1</span>
 							<span class="minus-plus l">
-								<i id="minus-num" class="minus">+</i>
+								<i id="plus-num" class="minus">+</i>
 							</span>
 						</div>
 					</div>
 					<div class="line"></div>
-					<span id="add-to-cart" class="add-to-cart">
-						<i class="iconfont"><img src="../images/honggouwuche.png"/></i>
-						 加入购物车 
-					</span>
-					<span id="collect-product" class="collect-product">
-						<img src="../images/collect.png"/>
-						 收藏商品 
-					</span>
-					<span id="code-buy" class="code-buy">
-						<div class="code-box">
-							<img class="qr" src="../images/code.png"/>
-							<div class="code-font"><em>手机客户端<br/>扫一扫购买</em></div>
-						</div>
-					</span>
+					<div id="joinCart">
+						<span id="add-to-cart" class="add-to-cart">
+							<i class="iconfont"><img src="../images/honggouwuche.png"/></i>
+							 加入购物车 
+						</span>
+						<span id="collect-product" class="collect-product">
+							<img src="../images/collect.png"/>
+							 收藏商品 
+						</span>
+						<span id="code-buy" class="code-buy">
+							<div class="code-box">
+								<img class="qr" src="../images/code.png"/>
+								<div class="code-font"><em>手机客户端<br/>扫一扫购买</em></div>
+							</div>
+						</span>	
+					</div>		
+					<div id="balance" class="balance">
+						<p class="success-tip">该商品已成功添加到购物车</p>
+						<p class="cart-total">
+							购物车共<span id="cart-num">1</span>件商品
+						</p>
+						<p class="balance-btns">
+							<a id="go-to-cart-url" href="gouwuche.html">去购物车结算&nbsp;&gt;</a>
+							<span id="keep-shopping"> 继续购物 </span>
+						</p>
+					</div>
 				</div>
 			</div>
 			
@@ -726,10 +755,13 @@
 </div>
 
 <script type="text/javascript" src="../js/tools.js"></script>
+<script type="text/javascript" src="../js/parabola.js" ></script>
 <script type="text/javascript" src="../js/fangdajing.js"></script>
 <script type="text/javascript" src="../js/move.js"></script>
 <script type="text/javascript" src="../js/xiangqing.js"></script>
 <script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="../js/cookieTools.js" ></script>
+<script type="text/javascript" src="../js/modernizr-custom-v2.7.1.min.js" ></script>
 <script type="text/javascript">
 window.onload=function(){
    var Li = (document.getElementById("wrapL").children[0].offsetWidth+10);//获取单个图片li的宽
@@ -738,17 +770,51 @@ window.onload=function(){
    $("wrapL").appendChild(cbannerimg);
    $("wrapL").style.width = Li*obannerimg.length+"px"
    /*换一批*/
-  var num = 0;
+   var num = 0;
    $("change").onclick = function(){
 	   num++;
 	   if(num>=obannerimg.length){
 		num=1	;
 		$("wrapL").style.left = 0+"px";
 	   }
-		console.log(num)
+		
 	 move($("wrapL"),"left",-Li*num);
 	}
+
+	//加入购物车
+	var element = $("thumb-wrap"), 
+		target = $("shopCar");
+	// 抛物线元素的的位置标记
+	var parabola = funParabola(element,target).mark();
+	$("add-to-cart").onclick=function(){
+		$("thumb-wrap").style.cssText="display:block";
+		parabola.init();
+		$("joinCart").style.cssText="display:none";
+		$("balance").style.cssText="display:block";
+		
+	};
+
+
+	//数量改变
+	var num=parseInt($("num").innerHTML);
+	//添加
+	$("plus-num").onclick = function(){
+		num++;
+		$("num").innerHTML=num;
+	}
+	//减少
+	$("minus-num").onclick = function(){
+		num--;
+		if(num<=0){
+			num=0;
+		}
+		$("num").innerHTML=num;
+	}
+
 }
+
+
+
 function sel(data){
 	var liarr=document.getElementById("tab_t").children;
 	for(var i in liarr){
@@ -765,9 +831,10 @@ function sel(data){
 	}
 	divarr[data-1].className="";
 }
-//li单击显示详情
+
 
 var jq = $.noConflict();
+/*
 jq(function(){
 	jq.ajax({
 		url:"../php/getGoodsInfo.php",
@@ -778,7 +845,25 @@ jq(function(){
 		}
 	});
 })
+*/
+jq(function(){
+	var userName=getCookie("userName");
+	if(userName==""){
+		jq("#loginBoxHide").css("display","none");
+		jq("#loginBoxShow").css("display","block");	
+	}else{
+		jq("#loginBoxShow").css("display","none");
+		jq(".userName").html(userName);		
+	}
+	
+//点击退出，清除cookie
+	jq("#tuichu").click(function(){
+		removeCookie("userName");
+		jq("#loginBoxHide").css("display","none");
+		jq("#loginBoxShow").css("display","block");
+	})
 
+})
 //logo换图
 jq(function(){
 	jq("#logo").mouseenter(function(){
@@ -823,7 +908,10 @@ jq("#focus").on("mouseleave", function() {
                 jq(this).hide();
             });
 			
-			
+//关闭亦凡
+	jq(".icon-del").click(function(){
+		jq(".code-down-box").toggle();
+	})			
 //客户服务下拉菜单显示		
 jq(".client").on("mouseenter", function() {
                 jq('#tool-select').show();
@@ -921,9 +1009,38 @@ show();
 
 
 jq(function(){
+  var smallImgLi = jq('.wrapSmallImg ul li');
+  var smallImgLiLength = smallImgLi.size();
+  var smallImgLiWidth = smallImgLi.outerWidth(true);
+  var smallImgUl = jq('.wrapSmallImg ul');
+  var leftBtn = jq('span.left');
+  var rightBtn = jq('span.right');
   var now = 0;
   var zoomMiddleDiv = jq('.zoomMiddle');
-
+  smallImgLi.mouseover(function(){
+    jq(this).addClass('current').siblings().removeClass('current');
+    var thisSrc = jq(this).children('img').attr('src');
+    jq('.zoomMiddle img').attr('src',thisSrc);
+    jq('.zoomLarge img').attr('src',thisSrc);
+  });
+  rightBtn.click(function(){
+    leftBtn.removeClass('disable');
+    if(now>=smallImgLiLength-4){
+      jq(this).addClass('disable');
+      now = smallImgLiLength-4;
+    }else{
+      now++;
+      smallImgUl.animate({'left':-now*smallImgLiWidth},300);
+    }
+  });
+  leftBtn.click(function(){
+    if(now==0){
+      now=0;
+    }else{
+      now--;
+      smallImgUl.animate({'left':'+='+smallImgLiWidth},300);
+    }
+  });
   zoomMiddleDiv.mousemove(function(e){
     jq('.mask').show();
     jq('.zoomLarge').show();
@@ -943,8 +1060,8 @@ jq(function(){
     var percentageX = x/(zoomMiddleDiv.width()-jq('.mask').width());
     var percentageY = y/(zoomMiddleDiv.height()-jq('.mask').height());
     jq('.zoomLarge img').css({
-      left:-percentageX*(600-jq('.zoomLarge').width()),
-      top:-percentageY*(600-jq('.zoomLarge').height())
+      left:-percentageX*(720-jq('.zoomLarge').width()),
+      top:-percentageY*(960-jq('.zoomLarge').height())
     });
     jq('.mask').css({
       'left':x+'px',
@@ -956,7 +1073,6 @@ jq(function(){
     jq('.zoomLarge').hide();
   });
 });
-
 
 
 

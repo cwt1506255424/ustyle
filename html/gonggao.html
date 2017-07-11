@@ -25,7 +25,15 @@
         </div>
         <div class="top-r">
         	<ul>
-            	<li class="te"><span>Hi~[&nbsp;</span><a href="../html/denglu.html">请登录<span>&nbsp;]</span></a><a href="../html/zhuce.html" class="te"><span>[&nbsp;</span>免费注册<span>&nbsp;]</span></a></li>
+            	<li class="te">
+					<div id="loginBoxShow">
+						<span>Hi~[&nbsp;</span><a href="denglu.html">请登录<span>&nbsp;]</span></a><a href="zhuce.html" class="te"><span>[&nbsp;</span>免费注册<span>&nbsp;]</span></a>
+					</div>
+					<div id="loginBoxHide">
+						<span>Hi~&nbsp;</span><a class="userName" style="color:#000"></a>
+						[&nbsp;<a id="tuichu" href="denglu.html">退出</a>&nbsp;]
+					</div>
+				</li>
                 <li class="changeBg"><a href="#">MY有货
                 	<i class="iconfont"><img src="../images/xiajiantou.png"/></i></a>
                 </li>
@@ -56,15 +64,15 @@
 <header>
 	<div class="margin clear">
         <div class="header-l">
-           <ul>
-           		<li><h5 class="name-c"><a href="#">男生</a></h5><h5><a href="#">BOYS</a></h5></li>
-            	<li><h5 class="name-c"><a href="#">女生</a></h5><h5><a href="#">GIRLS</a></h5></li>
-            	<li><h5 class="name-c"><a href="#">潮童</a></h5><h5><a href="#">KIDS</a></h5></li>
-           		<li><h5 class="name-c"><a href="#">创意生活</a></h5><h5><a href="#">LIFE STRLE</a></h5></li>
+		  <ul id="tab_t">
+           		<li onclick="xuanze(1)" class="act1"><h5 class="name-c"><a href="#">男生</a></h5><h5><a href="#">BOYS</a></h5></li>
+            	<li onclick="xuanze(2)" class=""><h5 class="name-c"><a href="#">女生</a></h5><h5><a href="#">GIRLS</a></h5></li>
+            	<li onclick="xuanze(3)" class=""><h5 class="name-c"><a href="#">潮童</a></h5><h5><a href="#">KIDS</a></h5></li>
+           		<li onclick="xuanze(4)" class=""><h5 class="name-c"><a href="#">创意生活</a></h5><h5><a href="#">LIFE STRLE</a></h5></li>
            </ul>
        </div>
        <div id="logo">
-       		<a href="#" class="logo"><img id="img01" src="../images/logo-en.png" /></a>
+       		<a href="index.html" class="logo"><img id="img01" src="../images/logo-en.png" /></a>
        </div>
        <div class="header-r">
 			<div class="search clear">
@@ -555,10 +563,39 @@
 </div>
 
 <script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="../js/cookieTools.js" ></script>
 <script type="text/javascript">
+function xuanze(data){
+	var liaar=document.getElementById("tab_t").children;//取得所有li元素，也就是取得所有选项卡
+	for(var i=0;i<liaar.length;i++){//遍历所有li元素
+		liaar[i].className="";//把所有选项卡样式清除
+	}
+	liaar[data-1].className="act"+data;
+	var tab_c=document.getElementById("nav");
+	tab_c.className="hide"+data;
+}
 
 
 var jq = $.noConflict(); 
+
+
+jq(function(){
+	//读取coolie
+	var userName=getCookie("userName");
+	if(userName!=""){
+		jq("#loginBoxShow").toggle();
+		jq(".userName").html(userName);
+	}else{
+		jq("#loginBoxHide").toggle();
+	}
+	
+//点击退出，清除cookie
+	jq("#tuichu").click=removeCookie("userName");
+
+})
+
+
+
 jq(document).ready(function()
 {
 	jq("#firstpane li.kinds").click(function()
