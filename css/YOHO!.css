@@ -33,6 +33,11 @@ header {
           color: #000;
           font: 16px/20px ""; }
 
+#show embed {
+  width: 1240px;
+  height: 300px;
+  margin: 0 auto; }
+
 #banner {
   background: url("../images/shadow.png") repeat-x left bottom; }
   #banner .wrap {
@@ -59,10 +64,9 @@ header {
       #banner .wrap .yohobuy .yohobuy-logo {
         float: left;
         margin: 0 5px 0 0;
-        width: 187px;
-        height: 170px;
-        position: relative;
-        overflow: hidden; }
+        width: 178px;
+        height: 178px;
+        position: relative; }
         #banner .wrap .yohobuy .yohobuy-logo a img {
           width: 100%;
           height: 100%;
@@ -80,13 +84,19 @@ header {
         margin: 5px 0 0 0;
         width: 100%;
         height: 240px; }
+    #banner .wrap .yohobuy-logo {
+      float: left;
+      margin: 0 5px 0 0;
+      width: 178px;
+      height: 178px;
+      position: relative; }
     #banner .wrap .section {
       float: left;
       margin: 0 20px 0 0;
       width: 327px; }
       #banner .wrap .section .section-logo {
         float: left;
-        width: 100%;
+        width: 327px;
         height: 415px; }
     #banner .wrap .specialWrap {
       float: left;
@@ -95,6 +105,13 @@ header {
       margin: 0 0 0 20px;
       width: 327px;
       float: left; }
+      #banner .wrap .yohogirls a img {
+        width: 100%;
+        height: 100%;
+        display: block; }
+      #banner .wrap .yohogirls .yohobuy-logo {
+        width: 327px;
+        height: 415px; }
 
 .download-box {
   margin-top: 53px;

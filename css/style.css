@@ -7,6 +7,38 @@ img:hover {
   transition: .3s;
   opacity: .8; }
 
+.code-down-box {
+  position: fixed;
+  top: 260px;
+  right: 20px;
+  width: 117px;
+  height: 216px;
+  border: none;
+  background-color: transparent;
+  z-index: 990;
+  display: block; }
+  .code-down-box .code-img {
+    width: 117px;
+    height: 192px;
+    background-image: url(../images/qr-yifan-large.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%; }
+  .code-down-box .code-title {
+    color: #000;
+    font-size: 12px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center; }
+  .code-down-box .icon-del {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: -13px;
+    right: -10px;
+    display: inline-block;
+    font-size: 30px;
+    cursor: pointer; }
+
 #top {
   width: 100%;
   height: 33px;
@@ -27,7 +59,7 @@ img:hover {
   height: 162px;
   position: absolute;
   left: 10px;
-  top: 27px;
+  top: 25px;
   display: none;
   margin-left: -5px;
   background-color: #f4f4f4;
