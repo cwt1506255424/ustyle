@@ -1,47 +1,19 @@
-//功能：保存cookie
-//参数：
-//key：键
-//value：值
-//dayCount：有效期（单位是天）
-//返回值：无
-function saveCookie(key,value,dayCount){
-	var d = new Date();
-	d.setDate(d.getDate()+dayCount);
-	document.cookie = key+"="+encodeURIComponent(value)+";expires="+d.toGMTString();	
+function setCookie(c_name,value,expiredays){//这个函数中的参数存有 cookie 的名称、值以及过期天数。
+var exdate=new Date()
+exdate.setDate(exdate.getDate()+expiredays)
+document.cookie=c_name+ "=" +escape(value)+
+((expiredays==null) ? "" : ";expires="+exdate.toGMTString())+";path=/;";
 }
+ function getCookie(name){//取cookies函数     
+    
+       var arr = document.cookie.match(new RegExp("(^| )"+name+"=([^;]*)(;|$)")); 
+       if(arr != null) return unescape(arr[2]); return null; 
 
-
-//功能：读取cookie（根据键读取对应的值）
-//参数：
-//key：键
-//返回值：值，""：表示没有找到对应的cookie；
-
-//cssfile=red; aauserName=ttt; userName=jzm
-function getCookie(key){	
-	var str = decodeURIComponent(document.cookie);
-	//1、转换成数组
-	var arr = str.split("; ");
-	//2、根据键找到对应的数组元素
-	var index=-1;
-	for(var i=0;i<arr.length;i++){
-		if(arr[i].indexOf(key+"=")==0){
-			index = i;
-			break;
-		}
-	}
-	//3、截取出值
-	if(index==-1){
-		return "";
-	}else{
-		return arr[index].substring(key.length+1);
-	}
-}
-
-//功能：删除cookie(根据键删除cookie)
-//参数：
-//key：键；
-function removeCookie(key){
-	saveCookie(key,"",-1);
-}
-
-
+    } 
+ function removeCookie(name){ //删除cookie  
+       var exp = new Date(); 
+       exp.setTime(exp.getTime() - 1); 
+       var cval=getCookie(name); 
+       if(cval!=null) document.cookie= name + "="+cval+";expires="+exp.toGMTString()+";path=/;";
+    }  
+    

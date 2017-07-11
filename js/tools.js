@@ -295,7 +295,7 @@ function formatDate(date){
 			}  
 			break;  
 		case 'password':  //
-			if((/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/).test(value)){   
+			if((/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,20}$/).test(value)){ 
 				return true;   
 			}else{  
 				return false;
