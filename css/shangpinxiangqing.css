@@ -204,7 +204,7 @@ header .header-r .hot a{margin-right:18px;}
 #center .main .main-r .trade-content .type-chose #balance .balance-btns #keep-shopping{display: inline-block;width: 140px;height: 46px;text-align: center;line-height: 42px;margin-bottom: 15px;background: #fff;color: #222;border: 1px solid #ccc;box-sizing: border-box;font-size: 16px;cursor: pointer;}
 
 
-#content{height:5760px;border:1px solid #e0e0e0;margin-top:30px;}
+#content{height:auto;min-height:1000px;border:1px solid #e0e0e0;margin-top:30px;}
 #content .inf-title{margin-bottom:30px;text-align:center;margin-top:35px;}
 #content .te{background:url(../images/heng.png) center -5px;margin-top:55px;}
 #content .te .title-head{border-left:20px solid #fff;border-right:20px solid #fff;}
@@ -278,7 +278,7 @@ header .header-r .hot a{margin-right:18px;}
 footer{height:295px;background:#000;}
 footer #footer-t{padding:20px 0 10px;}
 footer #footer-t .left{width:123px;height:31.5px;float:left;margin-right:60px;line-height:30px;font-size:12px;font-weight:700;}
-footer #footer-t .left .iconfont{color:#fff;margin-right:5px;}
+footer #footer-t .left .iconfont{color:#fff;margin-right:4px;}
 footer #footer-t .left .red{font:700 12px/30px "";color:#e01;}
 footer #footer-t .left .rpzp{font:700 12px/30px "";color:#fff;}
 
