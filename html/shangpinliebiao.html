@@ -18,7 +18,7 @@
         	<i class="iconfont"><img src="../images/sanheng.png"/></i>
             <a href="#" class="linkone">YOHO!BUY 有货</a>
             	<ul class="group-list">
-                	<li><a href="#" onmouseover="javascript:this.innerHTML='集团官网'" onmouseout="javascript:this.innerHTML='YOHO!'">YOHO!</a></li>
+                	<li><a href="YOHO!.html"  onmouseover="javascript:this.innerHTML='集团官网'" onmouseout="javascript:this.innerHTML='YOHO!'">YOHO!</a></li>
 					<li><a href="#" onmouseover="javascript:this.innerHTML='男生潮流'" onmouseout="javascript:this.innerHTML='YOHO!BOYS'">YOHO!BOYS</a></li>
 					<li><a href="#" onmouseover="javascript:this.innerHTML='女生潮流'" onmouseout="javascript:this.innerHTML='YOHO!GIRLS'">YOHO!GIRLS</a></li>
 					<li><a href="#" onmouseover="javascript:this.innerHTML='物趣分享'" onmouseout="javascript:this.innerHTML='YOHO!SHOW'">YOHO!SHOW</a></li>
@@ -462,7 +462,7 @@
 		</div>
 	</div>
 	<ul id="listgoodsId" class="goods-container clear">
-		<li class="good-info">
+		<li class="good-info draw meet">
 			<div class="good-detail-img">
 				<a class="good-thumb"><img class="lazy" src="../images/list1.jpg"/></a>
 			</div>
@@ -475,7 +475,7 @@
 				</p>
 			</div>
 		</li>
-		<li class="good-info">
+		<li class="good-info draw meet">
 			<div class="good-detail-img">
 				<a class="good-thumb" href="shangpinxiangqing.html"><img class="lazy" src="../images/list8.jpg"/></a>
 			</div>
@@ -488,7 +488,7 @@
 				</p>
 			</div>
 		</li>
-		<li class="good-info">
+		<li class="good-info draw meet">
 			<div class="good-detail-img">
 				<a class="good-thumb"><img class="lazy" src="../images/list3.jpg"/></a>
 			</div>
@@ -501,7 +501,7 @@
 				</p>
 			</div>
 		</li>
-		<li class="good-info">
+		<li class="good-info draw meet">
 			<div class="good-detail-img">
 				<a class="good-thumb"><img class="lazy" src="../images/list4.jpg"/></a>
 			</div>
@@ -646,13 +646,14 @@ jq(function(){
 		success:function(data){
 		var obj=eval(data);
 		for(var i=0;i<obj.length;i++){
+				let goodsId=obj[i].goodsId;
 				let goodsName=obj[i].goodsName;
 				let goodsType=obj[i].goodsType;
 				let goodsPrice=obj[i].goodsPrice;
 				let goodsImg=obj[i].goodsImg;
 				let goodsDesc=obj[i].goodsDesc;
 	            let beiyong1=obj[i].beiyong1;
-				let str='<li class="good-info"><div class="good-detail-img"><a class="good-thumb"><img class="lazy" src="'+obj[i].goodsImg+'"/></a></div><div class="good-detail-text"><a>'+obj[i].goodsName+'</a><p class="brand"><a>'+obj[i].goodsDesc+'</a></p><p class="price "><span class="market-price">￥'+obj[i].beiyong1+'</span><span class="sale-price">￥'+obj[i].goodsPrice+'</span></p></div></li>';
+				let str='<li class="good-info draw meet" ord="'+goodsId+'" ><div class="good-detail-img"><a class="good-thumb"><img class="lazy" src="'+obj[i].goodsImg+'"/></a></div><div class="good-detail-text"><a>'+obj[i].goodsName+'</a><p class="brand"><a>'+obj[i].goodsDesc+'</a></p><p class="price "><span class="market-price">￥'+obj[i].beiyong1+'</span><span class="sale-price">￥'+obj[i].goodsPrice+'</span></p></div></li>';				
 				jq(".goods-container").append(str);
 			}
 		jq("#listgoodsId li").on("click",function(){
@@ -663,7 +664,7 @@ jq(function(){
 		
 		}
 	});
-})
+});
 
 jq(document).ready(function(){
 	jq(".menu_head").click(function(){
@@ -673,24 +674,27 @@ jq(document).ready(function(){
  	});
 });
 
+
+//读取coolie
 jq(function(){
 	var userName=getCookie("userName");
-	if(userName==""){
-		jq("#loginBoxHide").css("display","none");
-		jq("#loginBoxShow").css("display","block");	
-	}else{
+	if(userName!=""){
 		jq("#loginBoxShow").css("display","none");
-		jq(".userName").html(userName);		
-	}
-	
-//点击退出，清除cookie
-	jq("#tuichu").click(function(){
-		removeCookie("userName");
+		jq(".userName").html(userName);	
+	}else{
 		jq("#loginBoxHide").css("display","none");
-		jq("#loginBoxShow").css("display","block");
-	})
+		jq("#loginBoxShow").css("display","block");		
+	}
+})	
 
+//点击退出，清除cookie
+jq("#tuichu").click(function(){
+	removeCookie("userName");
+	jq("#loginBoxHide").css("display","none");
+	jq("#loginBoxShow").css("display","block");
 })
+
+
 //关闭亦凡
 	jq(".icon-del").click(function(){
 		jq(".code-down-box").toggle();

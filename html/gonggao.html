@@ -13,7 +13,7 @@
         	<i class="iconfont"><img src="../images/sanheng.png"/></i>
             <a href="#" class="linkone">YOHO!BUY 有货</a>
             	<ul class="group-list">
-                	<li><a href="#" onmouseover="javascript:this.innerHTML='集团官网'" onmouseout="javascript:this.innerHTML='YOHO!'">YOHO!</a></li>
+                	<li><a href="YOHO!.html" onmouseover="javascript:this.innerHTML='集团官网'" onmouseout="javascript:this.innerHTML='YOHO!'">YOHO!</a></li>
 					<li><a href="#" onmouseover="javascript:this.innerHTML='男生潮流'" onmouseout="javascript:this.innerHTML='YOHO!BOYS'">YOHO!BOYS</a></li>
 					<li><a href="#" onmouseover="javascript:this.innerHTML='女生潮流'" onmouseout="javascript:this.innerHTML='YOHO!GIRLS'">YOHO!GIRLS</a></li>
 					<li><a href="#" onmouseover="javascript:this.innerHTML='物趣分享'" onmouseout="javascript:this.innerHTML='YOHO!SHOW'">YOHO!SHOW</a></li>
@@ -578,21 +578,23 @@ function xuanze(data){
 
 var jq = $.noConflict(); 
 
-
+//读取coolie
 jq(function(){
-	//读取coolie
 	var userName=getCookie("userName");
 	if(userName!=""){
-		jq("#loginBoxShow").toggle();
-		jq(".userName").html(userName);
+		jq("#loginBoxShow").css("display","none");
+		jq(".userName").html(userName);	
 	}else{
-		jq("#loginBoxHide").toggle();
+		jq("#loginBoxHide").css("display","none");
+		jq("#loginBoxShow").css("display","block");		
 	}
+})	
+
 	
 //点击退出，清除cookie
 	jq("#tuichu").click=removeCookie("userName");
 
-})
+
 
 
 

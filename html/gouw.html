@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>购物车</title>
 <link href="../css/public.css" rel="stylesheet" type="text/css">
-<link href="../css/gouwuche.css" rel="stylesheet" type="text/css">
+<link href="../css/gouw.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <header>
@@ -53,7 +53,10 @@
 		<div class="pay-wapper margin1">
 			<div class="cart-title">
 				<p class="left selectAll" style="width:75.8px;">
-					<i class="cart-item-checked"><img src="../images/weixuan1.png"/></i>
+					<i class="cart-item-checked">
+						<img class="quanxuan" src="../images/weixuan1.png"/>
+						<img class="quanxuan" src="../images/xuan1.png" style="display:none"/>
+					</i>
 					 全选
 				</p>
 				<p class="left" style="width:325.5px">商品信息</p>
@@ -64,7 +67,10 @@
 			</div>
 		</div>
 		<div class="ordinary">
-			<i class="cart-item-checked"><img src="../images/weixuan2.png"/></i>
+			<i class="cart-item-checked">
+				<img class="quanxuan" src="../images/weixuan2.png"/>
+				<img class="quanxuan" src="../images/xuan2.png" style="display:none"/>
+			</i>
 			<code>普通商品</code> 已免运费
 		</div>
 		<div class="promotion-pool">
@@ -80,7 +86,10 @@
 			<ul class="table-group">
 				<li id="sellItem" class="sellItem clear">
 					<div class="pay-pro" style="width:368px;">
-						<i class="cart-item-checked"><img src="../images/weixuan2.png"/></i>
+						<i class="cart-item-checked">
+							<img class="quanxuan singleSelect" src="../images/weixuan2.png"/>
+							<img class="quanxuan singleSelect" src="../images/xuan2.png" style="display:none"/>
+						</i>
 						<a href="#" class="payGoods"><img src="../images/shiulian.jpg"/></a>
 						<p class="pay-pro-info">
 							<a href="#">RASEN family Icon++ 心动魔方 水粉蓝</a>
@@ -109,7 +118,10 @@
 		</div>
 		<div class="submit">
 			<div class="fixed-option">
-				<i class="cart-item-checked"><img src="../images/quanxuan.png"/></i>
+				<i class="cart-item-checked">
+					<img class="quanxuan" src="../images/quanxuan.png"/>
+					<img class="quanxuan" src="../images/xuan2.png" style="display:none"/>
+				</i>
 				<span class="selectAll">全选</span>
 				<a href="#" class="delAll">删除选中商品</a>
 				<a href="#" class="removeAll">移入收藏夹</a>
@@ -131,101 +143,7 @@
 
 	
 </section>
-<footer>
-	<div id="footer-t" class="margin clear">
-    	<div class="left">
-        	<i class="iconfont"><img src="../images/zheng.png"/></i><span class="red">100%</span><span class="rpzp">品牌正品</span>
-        </div>
-        <div class="left">
-        	<i class="iconfont"><img src="../images/seven.png"/></i><span class="red">7天</span><span class="rpzp">无理由退换货</span>
-        </div>
-        <div class="left">
-        	<i class="iconfont"><img src="../images/weixin.png"/></i><span class="red">便捷</span><span class="rpzp">在线客服</span>
-        </div>
-        <div class="right">
-        	<input type="text" value="订阅我们的邮件"><a href="#"><i class="iconfont"><img src="../images/youjian.png"/></i></a>
-        </div>
-    </div>
-	<div id="footer-m" class="margin">
-    	<ul>
-        	<li>
-            	<p><span>新手专区</span></p>
-                <p><a href="#">注册登录</a></p>
-                <p><a href="#">购物结算</a></p>
-                <p><a href="#">下单支付</a></p>
-                <p><a href="#">收货评价</a></p>
-            </li>
-        	<li>
-            	<p><span>会员中心</span></p>
-                <p><a href="#">会员制度</a></p>
-                <p><a href="#">会员优惠</a></p>
-                <p><a href="#">账户管理</a></p>
-                <p><a href="#">密码管理</a></p>
-            </li>
-            <li>
-            	<p><span>购物指南</span></p>
-                <p><a href="#">发票</a></p>
-                <p><a href="#">尺码对照</a></p>
-                <p><a href="#">尺码解读</a></p>
-                <p><a href="#">商品咨询</a></p>
-            </li>
-            <li>
-            	<p><span>支付方式</span></p>
-                <p><a href="#">在线支付</a></p>
-                <p><a href="#">货到付款</a></p>
-                <p><a href="#">分期支付</a></p>
-                <p><a href="#">优惠券、有货币</a></p>
-            </li>
-            <li>
-            	<p><span>配送方式</span></p>
-                <p><a href="#">配送说明</a></p>
-                <p><a href="#">运费说明</a></p>
-                <p><a href="#">验货签收</a></p>
-                <p><a href="#">收货样品</a></p>
-            </li>
-            <li>
-            	<p><span>售后服务</span></p>
-                <p><a href="#">退换货政策</a></p>
-                <p><a href="#">退换货流程</a></p>
-                <p><a href="#">投诉与建议</a></p>
-                <p><a href="#">在线客服</a></p>
-            </li>
-            <li>
-            	<p><span>APP常见问题</span></p>
-                <p><a href="#">IPhone版</a></p>
-                <p><a href="#">Android版</a></p>
-                <p><a href="#">wap版</a></p>
-                <p><a href="#">IPAD版</a></p>
-            </li>
-        </ul>
-    </div>
-    <div id="footer-b" class="margin clear">
-    	<a href="#"><img src="../images/footer1.png"/></a>
-        <a href="#"><img src="../images/footer2.png"/></a>
-        <a href="#"><img src="../images/footer3.png"/></a>
-        <div class="about">
-        	<p><a href="#">返回首页</a><span>|</span><a href="#">YOHO!BUY 有货</a><span>|</span><a href="#">新力传媒</a><span>|</span><a href="#">联系我们</a><span>|</span><a href="#">商家入驻</a><span>|</span><a href="#">隐私条款</a><span>|</span><a href="#">友情链接</a></p>
-            <p>CopyRight &copy;2007-2016 南京新与力文化传播有限公司<a href="#">苏ICP备09011225号</a>NewPower Co. 版权所有 经营许可证编号：苏B2-20120395</p>
-        </div>
-    </div>
-</footer>
-<div id="show">
-    <div class="qrcode-hover-box">
-        <a href="#" class="layer-box"><span class="qrcode-img"></span></a>
-        <div id="focusLeft" class="valign">
-            <img src="../images/wechat.png" />
-            <h5 class="qr-words">微信扫一扫</h5>
-            <h5 class="qr-words">关注公众号，赢免单</h5>
-        </div>
-        <div id="downLoadAppRight" class="valign">
-            <img src="../images/mobile.png" />
-            <h5 class="qr-words">下载手机客户端</h5>
-            <h5 class="qr-words">更多客户端</h5>
-        </div>
-    </div>
-    
-    <a href="denglu.html"><div class="return-top">^</div></a>
-</div>
+
 
 </body>
 </html>
@@ -234,37 +152,11 @@
 <script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
 <script type="text/javascript">
 
-window.onload=function(){
-	var price=parseInt($("price").innerHTML);
-	var num=parseInt($("num").value);
-	var sum;
-	//添加
-	$("add").onclick=function(){
-		num++;
-		sum=price*num;
-		$("num").value=num;
-		$("sum").innerHTML=sum+".00元";
-	}
-	//减少
-	$("minus").onclick=function(){
-		num--;
-		if(num<=1){
-			num=1;
-		}
-		sum=price*num;
-		$("num").value=num;
-		$("sum").innerHTML=sum+".00元";
-	}
-	
-	$("del").onclick=function(){
-		$("sellItem").style.cssText="display:none;";
-	}
-}
 
 
 var jq = $.noConflict();
 
-//读取coolie
+
 jq(function(){
 	var userName=getCookie("userName");
 	if(userName!=""){
@@ -277,7 +169,15 @@ jq(function(){
 })	
 
 //点击全选选中
+jq(".selectAll").click(function(){
 
+	jq(".quanxuan").toggle();
+});
+//点击单个商品选中
+jq(".cart-item-checked").click(function(){
+
+	jq(".singleSelect").toggle();
+});
 //MY有货下拉菜单显示
 jq(".has").on("mouseenter", function() {
                 jq('#hasTool').show();

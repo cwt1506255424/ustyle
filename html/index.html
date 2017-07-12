@@ -491,6 +491,18 @@
         </ul>
     </div>
 </section>
+<section id="fun" class="margin clear">
+	<h2 class="title">潮趣FUN</h2>
+	<div class="voice_2 margin">
+		<ul>
+			<li class="li1"></li>
+			<li class="li2"></li>
+			<li class="li3"></li>
+			<li class="li4"></li>
+			<li class="li5"></li>
+		</ul>         
+	</div>
+</section>
 <section id="news" class="margin">
 	<h2 class="title">新品上架<a href="#" class="more">MORE</a></h2>
 	<div class="news-t">
@@ -872,15 +884,26 @@ function xuanze(data){
 
 var jq = $.noConflict(); 
 
+//读取coolie
 jq(function(){
 	var userName=getCookie("userName");
-	if(userName==""){
-		jq("#loginBoxHide").css("display","none");
-		jq("#loginBoxShow").css("display","block");	
-	}else{
+	if(userName!=""){
 		jq("#loginBoxShow").css("display","none");
-		jq(".userName").html(userName);		
+		jq(".userName").html(userName);	
+	}else{
+		jq("#loginBoxHide").css("display","none");
+		jq("#loginBoxShow").css("display","block");		
 	}
+})	
+
+	var userName=getCookie("userName");
+	if(userName!=""){
+		jq("#loginBoxShow").toggle();
+		jq(".userName").html(userName);
+	}else{
+		jq("#loginBoxHide").toggle();
+	}
+	
 	
 //点击退出，清除cookie
 	jq("#tuichu").click(function(){
@@ -889,6 +912,29 @@ jq(function(){
 		jq("#loginBoxShow").css("display","block");
 	})
 
+
+//手风琴
+jq(function(){
+	jq(".voice_2 ul li").each(function(){
+		var fold = jq(this).find(".unfold");
+		var unfold = jq(this).find(".fold");
+		if(fold.is(":hidden")){
+			jq(this).width(640);
+		}else{
+			jq(this).width(117);
+		}
+    })
+    jq(".voice_2 ul li:eq(0)").css("width","640px");
+    jq(".voice_2 ul li").mouseenter(function(){
+        var li_index = jq(this).index();
+		jq("ul li").stop(true,true);
+        jq(this).animate({width:640},200);
+        jq(this).find(".unfold").show();
+        jq(this).find(".fold").hide();
+        jq(this).siblings().animate({width:117},200);
+        jq(this).siblings().find(".unfold").hide();
+        jq(this).siblings().find(".fold").show();
+    })
 })
 
 //关闭亦凡
